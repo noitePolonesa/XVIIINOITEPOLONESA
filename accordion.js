@@ -20,49 +20,54 @@ class AccordionManager {
     }
 
     setupAccordion(section, index) {
-        const header = section.querySelector('h2');
-        
-        if (!header) return;
-        
-        const allContentAfterH2 = Array.from(section.children).filter(child => 
-            child !== header && child.tagName !== 'SPAN' && !child.classList.contains('accordion-icon')
-        );
-        
-        if (allContentAfterH2.length === 0) return;
-        
-        const contentId = `accordion-content-${index}`;
-        
-        section.classList.add('accordion-section');
-        section.setAttribute('tabindex', '0');
-        section.setAttribute('role', 'button');
-        section.setAttribute('aria-expanded', 'true');
-        section.setAttribute('aria-label', `Clique para expandir ou recolher ${header.textContent}`);
-        
-        header.classList.add('accordion-title');
-        
-        const contentWrapper = document.createElement('div');
-        contentWrapper.className = 'accordion-content';
-        contentWrapper.id = contentId;
-        contentWrapper.setAttribute('aria-labelledby', section.id || `section-${index}`);
-        
-        allContentAfterH2.forEach(element => {
-            const clonedElement = element.cloneNode(true);
-            contentWrapper.appendChild(clonedElement);
-            element.remove();
-        });
-        
-        section.appendChild(contentWrapper);
-        const icon = document.createElement('span');
-        icon.className = 'accordion-icon';
-        icon.setAttribute('aria-hidden', 'true');
-        header.appendChild(icon);        
-        this.setupEventListeners(section, contentWrapper);
-        this.accordions.push({
-            section: section,
-            content: contentWrapper,
-            isExpanded: true
-        });
-    }
+    const header = section.querySelector('h2');
+    
+    if (!header) return;
+    
+    const allContentAfterH2 = Array.from(section.children).filter(child => 
+        child !== header && child.tagName !== 'SPAN' && !child.classList.contains('accordion-icon')
+    );
+    
+    if (allContentAfterH2.length === 0) return;
+    
+    const contentId = `accordion-content-${index}`;
+    
+    section.classList.add('accordion-section', 'collapsed'); // Adiciona 'collapsed' por padrão
+    section.setAttribute('tabindex', '0');
+    section.setAttribute('role', 'button');
+    section.setAttribute('aria-expanded', 'false'); // Muda para 'false'
+    section.setAttribute('aria-label', `Clique para expandir ou recolher ${header.textContent}`);
+    
+    header.classList.add('accordion-title');
+    
+    const contentWrapper = document.createElement('div');
+    contentWrapper.className = 'accordion-content';
+    contentWrapper.id = contentId;
+    contentWrapper.setAttribute('aria-labelledby', section.id || `section-${index}`);
+    contentWrapper.style.height = '0px';
+    contentWrapper.style.paddingTop = '0';
+    contentWrapper.style.paddingBottom = '0';
+    contentWrapper.style.opacity = '0';
+    contentWrapper.style.overflow = 'hidden';
+    
+    allContentAfterH2.forEach(element => {
+        const clonedElement = element.cloneNode(true);
+        contentWrapper.appendChild(clonedElement);
+        element.remove();
+    });
+    
+    section.appendChild(contentWrapper);
+    const icon = document.createElement('span');
+    icon.className = 'accordion-icon';
+    icon.setAttribute('aria-hidden', 'true');
+    header.appendChild(icon);        
+    this.setupEventListeners(section, contentWrapper);
+    this.accordions.push({
+        section: section,
+        content: contentWrapper,
+        isExpanded: false
+    });
+}
 
     setupEventListeners(section, content) {
         section.addEventListener('click', (event) => {
