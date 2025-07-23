@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: linear-gradient(135deg, #dc143c, #8b0000);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo-container {
+    flex-shrink: 0;
+}
+
+.header-logo {
+    max-width: 120px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+    }
+    
+    .header-text {
+        text-align: left;
+        flex: 1;
+    }
+    
+    .header-logo {
+        max-width: 140px;
+        max-height: 140px;
+    }
+    
+    .header-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .header-text p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 3rem 2rem;
+    }
+    
+    .header-logo {
+        max-width: 160px;
+        max-height: 160px;
+    }
+    
+    .header-text h1 {
+        font-size: 3.2rem;
+    }
+    
+    .header-text p {
+        font-size: 1.4rem;
+    }
+    
+    .header-content {
+        gap: 3rem;
+    }
+}
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .header-content {
+        gap: 1rem;
+    }
+    
+    .header-logo {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    
+    .header-text p {
+        font-size: 1rem;
+    }
+}
+
+.header-logo {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.header-logo[alt]::before {
+    content: attr(alt);
+    display: block;
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-logo {
+        transition: none;
+    }
+    
+    .header-logo:hover {
+        transform: none;
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.accordion-section {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 1.5rem;
+}
+
+.accordion-section.collapsed {
+    padding: 1rem 2rem;
+    min-height: auto;
+}
+
+.accordion-section:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.accordion-section:active {
+    transform: translateY(0);
+}
+
+.accordion-title {
+    font-size: 1.5rem;
+    color: #dc143c;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.accordion-section:hover .accordion-title {
+    color: #8b0000;
+}
+
+.accordion-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion-section.collapsed .accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.accordion-content {
+    overflow: hidden;
+    transition: height 0.4s ease, 
+                padding 0.4s ease, 
+                opacity 0.3s ease;
+    background: rgba(220, 20, 60, 0.02);
+    border-radius: 6px;
+    padding: 1rem;
+    opacity: 1;
+}
+
+.accordion-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.accordion-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.accordion-content li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.accordion-content li:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content ul li::marker {
+    color: #dc143c;
+}
+
+.accordion-content ul.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.accordion-content ul.custom-list li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.accordion-content ul.custom-list li::before {
+    content: '•';
+    color: #dc143c;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.preserve-breaks {
+    white-space: pre-line;
+}
+
+.accordion-section:focus {
+    outline: 2px solid #dc143c;
+    outline-offset: 2px;
+}
+
+.preserve-breaks {
+    white-space: pre-line;
+}
+
+.drink-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.drink-category {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.05), rgba(139, 0, 0, 0.05));
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(220, 20, 60, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drink-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.15);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(220, 20, 60, 0.2);
+}
+
+.category-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.category-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #dc143c;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.category-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drink-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dotted rgba(220, 20, 60, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.drink-item:last-child {
+    border-bottom: none;
+}
+
+.drink-item:hover {
+    background-color: rgba(220, 20, 60, 0.05);
+    border-radius: 6px;
+}
+
+.drink-name {
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.drink-price {
+    font-weight: bold;
+    color: #dc143c;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    background: rgba(220, 20, 60, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    min-width: 70px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .drink-menu {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .drink-category {
+        padding: 0.75rem;
+    }
+    
+    .category-header {
+        margin-bottom: 0.75rem;
+    }
+    
+    .category-icon {
+        font-size: 1.3rem;
+        margin-right: 0.5rem;
+    }
+    
+    .category-name {
+        font-size: 1rem;
+    }
+    
+    .drink-item {
+        padding: 0.5rem 0;
+    }
+    
+    .drink-name {
+        font-size: 0.9rem;
+    }
+    
+    .drink-price {
+        font-size: 0.85rem;
+        min-width: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+    .drink-menu {
+        gap: 0.75rem;
+    }
+    
+    .drink-category {
+        padding: 0.5rem;
+    }
+    
+    .drink-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .drink-name {
+        margin-right: 0;
+    }
+    
+    .drink-price {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .accordion-section {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .accordion-section.collapsed {
+        padding: 1rem 1.5rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.3rem;
+    }
+    
+    .accordion-content {
+        padding: 0.8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .accordion-section,
+    .accordion-content,
+    .accordion-title,
+    .accordion-icon::before,
+    .accordion-icon::after {
+        transition: none;
+    }
+}
