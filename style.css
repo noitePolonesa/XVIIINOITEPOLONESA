@@ -1,3 +1,4 @@
+/* Reset e Base */
 * {
     margin: 0;
     padding: 0;
@@ -11,8 +12,23 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Variáveis CSS para consistência */
+:root {
+    --primary-color: #dc143c;
+    --primary-dark: #8b0000;
+    --shadow-light: 0 2px 10px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 15px rgba(0,0,0,0.15);
+    --shadow-heavy: 0 10px 30px rgba(0,0,0,0.15);
+    --border-radius-small: 8px;
+    --border-radius-medium: 10px;
+    --border-radius-large: 20px;
+    --transition-smooth: all 0.3s ease;
+    --transition-medium: all 0.4s ease;
+}
+
+/* Header */
 header {
-    background: linear-gradient(135deg, #dc143c, #8b0000);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -27,28 +43,22 @@ header {
     margin: 0 auto;
 }
 
-.logo-container {
-    flex-shrink: 0;
-}
-
 .header-logo {
     max-width: 120px;
     max-height: 120px;
     width: auto;
     height: auto;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: var(--border-radius-small);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .header-logo:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-.header-text {
-    text-align: center;
 }
 
 .header-text h1 {
@@ -65,6 +75,514 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Main Layout */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Cards Compartilhados (Instagram e Accordion) */
+.card-base {
+    background: white;
+    border-radius: var(--border-radius-medium);
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-medium);
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(220, 20, 60, 0.1);
+    position: relative;
+}
+
+.card-base::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #b91c3c, var(--primary-color));
+    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+.card-base:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    border-color: rgba(220, 20, 60, 0.2);
+}
+
+/* Accordion - Estende card-base */
+.accordion-section {
+    @extend .card-base;
+    cursor: pointer;
+    user-select: none;
+}
+
+.accordion-section.collapsed {
+    padding: 1rem 2rem;
+}
+
+.accordion-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.accordion-section:hover .accordion-title {
+    color: var(--primary-dark);
+}
+
+.accordion-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.accordion-section.collapsed .accordion-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.accordion-content {
+    overflow: hidden;
+    transition: height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
+    background: rgba(220, 20, 60, 0.02);
+    border-radius: 6px;
+    padding: 1rem;
+    opacity: 1;
+}
+
+.accordion-content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.accordion-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    list-style-type: disc;
+}
+
+.accordion-content li {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.accordion-content li:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content ul li::marker {
+    color: var(--primary-color);
+}
+
+.preserve-breaks {
+    white-space: pre-line;
+}
+
+.accordion-section:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Instagram Section - Usa card-base */
+.instagram-container {
+    background: white;
+    border-radius: var(--border-radius-medium);
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-medium);
+    margin-bottom: 2.5rem; /* Aumenta o espaçamento com a seção seguinte */
+    border: 2px solid rgba(220, 20, 60, 0.1);
+    position: relative;
+}
+
+.instagram-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #b91c3c, var(--primary-color));
+    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+.instagram-container:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    border-color: rgba(220, 20, 60, 0.2);
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.instagram-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.instagram-icon:hover {
+    transform: scale(1.05);
+}
+
+.instagram-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.instagram-icon svg path {
+    fill: white;
+}
+
+.instagram-text h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+.instagram-container:hover .instagram-text h3 {
+    color: var(--primary-dark);
+}
+
+.instagram-text p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.instagram-content {
+    text-align: center;
+}
+
+.instagram-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem; /* Aumenta o espaço entre o texto e o botão */
+}
+
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    border: 2px solid transparent;
+    margin-bottom: 1rem; /* Adiciona espaço abaixo do botão */
+}
+
+.instagram-button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.instagram-button svg {
+    width: 18px;
+    height: 18px;
+    transition: var(--transition-smooth);
+}
+
+.instagram-button:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* Carousel */
+.carousel-container {
+    margin: 2rem 0 3rem 0;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: var(--shadow-heavy), 0 1px 8px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.8);
+    border: 1px solid rgba(220, 20, 60, 0.1);
+    position: relative;
+}
+
+.carousel-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #b91c3c, var(--primary-color));
+    z-index: 5;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1.05);
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: scale(1);
+    animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.95) contrast(1.05);
+    transition: filter 0.3s ease;
+}
+
+.carousel:hover .carousel-image {
+    filter: brightness(1) contrast(1.1);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    background: linear-gradient(145deg, rgba(248, 249, 250, 0.95), rgba(255, 255, 255, 0.95));
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.carousel-indicators::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 0 0 3px 3px;
+}
+
+.carousel-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(220, 20, 60, 0.3);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.carousel-indicator:hover {
+    border-color: rgba(220, 20, 60, 0.6);
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
+}
+
+.carousel-indicator.active {
+    background: linear-gradient(145deg, var(--primary-color), #b91c3c);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(220, 20, 60, 0.4), inset 0 2px 4px rgba(255,255,255,0.3);
+}
+
+.carousel-indicator.active::before {
+    transform: translate(-50%, -50%) scale(1);
+    background: rgba(255,255,255,0.9);
+}
+
+.carousel-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Drink Menu */
+.drink-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.drink-category {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.05), rgba(139, 0, 0, 0.05));
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(220, 20, 60, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.drink-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.15);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(220, 20, 60, 0.2);
+}
+
+.category-icon {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.category-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.category-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.drink-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px dotted rgba(220, 20, 60, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.drink-item:last-child {
+    border-bottom: none;
+}
+
+.drink-item:hover {
+    background-color: rgba(220, 20, 60, 0.05);
+    border-radius: 6px;
+}
+
+.drink-name {
+    font-weight: 500;
+    color: #333;
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.drink-price {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    background: rgba(220, 20, 60, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    min-width: 70px;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsividade */
 @media (min-width: 768px) {
     .header-content {
         flex-direction: row;
@@ -113,15 +631,8 @@ header {
         gap: 3rem;
     }
 }
-@media (max-width: 480px) {
-    header {
-        padding: 1.5rem 0.5rem;
-    }
-    
-    .header-content {
-        gap: 1rem;
-    }
-    
+
+@media (max-width: 768px) {
     .header-logo {
         max-width: 100px;
         max-height: 100px;
@@ -134,612 +645,23 @@ header {
     .header-text p {
         font-size: 1rem;
     }
-}
-
-.header-logo {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.header-logo[alt]::before {
-    content: attr(alt);
-    display: block;
-    padding: 1rem;
-    font-size: 0.8rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .header-logo {
-        transition: none;
-    }
     
-    .header-logo:hover {
-        transform: none;
-    }
-}
-
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-.accordion-section {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: all 0.4s ease;
-    cursor: pointer;
-    user-select: none;
-    margin-bottom: 1.5rem;
-}
-
-.accordion-section.collapsed {
-    padding: 1rem 2rem;
-    min-height: auto;
-}
-
-.accordion-section:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transform: translateY(-2px);
-}
-
-.accordion-section:active {
-    transform: translateY(0);
-}
-
-.accordion-title {
-    font-size: 1.5rem;
-    color: #dc143c;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: color 0.3s ease;
-}
-
-.accordion-section:hover .accordion-title {
-    color: #8b0000;
-}
-
-.accordion-icon {
-    width: 24px;
-    height: 24px;
-    position: relative;
-    margin-left: 1rem;
-    flex-shrink: 0;
-}
-
-.accordion-icon::before,
-.accordion-icon::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 16px;
-    height: 2px;
-    background-color: currentColor;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease;
-}
-
-.accordion-icon::after {
-    transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.accordion-section.collapsed .accordion-icon::after {
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.accordion-content {
-    overflow: hidden;
-    transition: height 0.4s ease, 
-                padding 0.4s ease, 
-                opacity 0.3s ease;
-    background: rgba(220, 20, 60, 0.02);
-    border-radius: 6px;
-    padding: 1rem;
-    opacity: 1;
-}
-
-.accordion-content p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.accordion-content ul {
-    margin: 0;
-    padding-left: 1.5rem;
-    list-style-type: disc;
-}
-
-.accordion-content li {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 0.5rem;
-}
-
-.accordion-content li:last-child {
-    margin-bottom: 0;
-}
-
-.accordion-content ul li::marker {
-    color: #dc143c;
-}
-
-.accordion-content ul.custom-list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.accordion-content ul.custom-list li {
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.accordion-content ul.custom-list li::before {
-    content: '•';
-    color: #dc143c;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-.preserve-breaks {
-    white-space: pre-line;
-}
-
-.accordion-section:focus {
-    outline: 2px solid #dc143c;
-    outline-offset: 2px;
-}
-
-.preserve-breaks {
-    white-space: pre-line;
-}
-
-.drink-menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-}
-
-.drink-category {
-    background: linear-gradient(135deg, rgba(220, 20, 60, 0.05), rgba(139, 0, 0, 0.05));
-    border-radius: 12px;
-    padding: 1rem;
-    border: 1px solid rgba(220, 20, 60, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.drink-category:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.15);
-}
-
-.category-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid rgba(220, 20, 60, 0.2);
-}
-
-.category-icon {
-    font-size: 1.5rem;
-    margin-right: 0.75rem;
-}
-
-.category-name {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #dc143c;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.category-items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.drink-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px dotted rgba(220, 20, 60, 0.2);
-    transition: background-color 0.2s ease;
-}
-
-.drink-item:last-child {
-    border-bottom: none;
-}
-
-.drink-item:hover {
-    background-color: rgba(220, 20, 60, 0.05);
-    border-radius: 6px;
-}
-
-.drink-name {
-    font-weight: 500;
-    color: #333;
-    flex: 1;
-    margin-right: 1rem;
-}
-
-.drink-price {
-    font-weight: bold;
-    color: #dc143c;
-    font-family: 'Courier New', monospace;
-    font-size: 0.95rem;
-    background: rgba(220, 20, 60, 0.1);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    min-width: 70px;
-    text-align: center;
-}
-
-.carousel-container {
-    margin: 2rem 0 3rem 0;
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 
-        0 10px 30px rgba(0,0,0,0.15),
-        0 1px 8px rgba(0,0,0,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.8);
-    border: 1px solid rgba(220, 20, 60, 0.1);
-    position: relative;
-}
-
-.carousel-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #dc143c, #b91c3c, #dc143c);
-    z-index: 5;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    background: #000;
-}
-
-.carousel-track {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: scale(1.05);
-}
-
-.carousel-slide.active {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.carousel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 0;
-    filter: brightness(0.95) contrast(1.05);
-    transition: filter 0.3s ease;
-}
-
-.carousel:hover .carousel-image {
-    filter: brightness(1) contrast(1.1);
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: linear-gradient(145deg, rgba(220, 20, 60, 0.9), rgba(139, 0, 0, 0.9));
-    color: white;
-    border: none;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 
-        0 6px 20px rgba(220, 20, 60, 0.3),
-        0 2px 10px rgba(0,0,0,0.2);
-    border: 2px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
-}
-
-.carousel-btn:hover {
-    background: linear-gradient(145deg, #dc143c, #8b0000);
-    transform: translateY(-50%) scale(1.15);
-    box-shadow: 
-        0 8px 25px rgba(220, 20, 60, 0.4),
-        0 4px 15px rgba(0,0,0,0.3);
-}
-
-.carousel-btn:active {
-    transform: translateY(-50%) scale(1.05);
-}
-
-.carousel-btn-prev {
-    left: 25px;
-}
-
-.carousel-btn-next {
-    right: 25px;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    gap: 1rem;
-    background: linear-gradient(145deg, 
-        rgba(248, 249, 250, 0.95), 
-        rgba(255, 255, 255, 0.95));
-    backdrop-filter: blur(10px);
-    position: relative;
-}
-
-.carousel-indicators::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #dc143c, transparent);
-    border-radius: 0 0 3px 3px;
-}
-
-.carousel-indicator {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid rgba(220, 20, 60, 0.3);
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel-indicator::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #dc143c;
-    transition: transform 0.3s ease;
-}
-
-.carousel-indicator:hover {
-    border-color: rgba(220, 20, 60, 0.6);
-    transform: scale(1.3);
-    box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
-}
-
-.carousel-indicator.active {
-    background: linear-gradient(145deg, #dc143c, #b91c3c);
-    border-color: #dc143c;
-    box-shadow: 
-        0 0 20px rgba(220, 20, 60, 0.4),
-        inset 0 2px 4px rgba(255,255,255,0.3);
-}
-
-.carousel-indicator.active::before {
-    transform: translate(-50%, -50%) scale(1);
-    background: rgba(255,255,255,0.9);
-}
-
-.carousel-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-    color: white;
-    padding: 2rem;
-    z-index: 5;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.carousel:hover .carousel-overlay {
-    opacity: 1;
-}
-
-.carousel-counter {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    z-index: 10;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.instagram-section {
-    margin-bottom: 1.5rem; /* Mesmo espaçamento dos outros sections */
-}
-
-.instagram-container {
-    background: white; /* Fundo branco como os outros sections */
-    border-radius: 10px; /* Mesmo border-radius dos accordion-section */
-    padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Mesma sombra dos accordion-section */
-    transition: all 0.4s ease;
-    border: 2px solid rgba(220, 20, 60, 0.1); /* Borda sutil vermelha */
-    position: relative;
-}
-
-.instagram-container:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transform: translateY(-2px);
-    border-color: rgba(220, 20, 60, 0.2);
-}
-
-.instagram-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #dc143c, #b91c3c, #dc143c);
-    border-radius: 10px 10px 0 0;
-}
-
-.instagram-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    gap: 1rem;
-}
-
-.instagram-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #dc143c, #8b0000);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.instagram-icon:hover {
-    transform: scale(1.05);
-}
-
-.instagram-icon svg {
-    width: 35px;
-    height: 35px;
-}
-
-.instagram-icon svg path {
-    fill: white; /* Ícone branco sobre fundo vermelho */
-}
-
-.instagram-text h3 {
-    color: #dc143c; /* Vermelho como os títulos dos accordion */
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 0 0.25rem 0;
-    transition: color 0.3s ease;
-}
-
-.instagram-container:hover .instagram-text h3 {
-    color: #8b0000; /* Escurece no hover como os accordion */
-}
-
-.instagram-text p {
-    color: #666;
-    font-size: 1rem;
-    margin: 0;
-    font-weight: 500;
-}
-
-.instagram-content {
-    text-align: center; /* Centraliza todo o conteúdo */
-}
-
-.instagram-content p {
-    color: #555; /* Mesma cor do texto dos accordion */
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    text-align: center; /* Garante que o texto também fique centralizado */
-}
-
-.instagram-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #dc143c, #8b0000); /* Gradiente vermelho */
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
-    border: 2px solid transparent;
-    margin: 0 auto; /* Centraliza o botão */
-}
-
-.instagram-button:hover {
-    background: linear-gradient(135deg, #8b0000, #dc143c);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
-    border-color: rgba(255,255,255,0.2);
-}
-
-.instagram-button svg {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s ease;
-}
-
-.instagram-button:hover svg {
-    transform: translate(2px, -2px);
-}
-
-/* Responsividade seguindo o padrão dos accordion */
-@media (max-width: 768px) {
-    .instagram-container {
+    .card-base {
         padding: 1.5rem;
         margin-bottom: 1rem;
+    }
+    
+    .accordion-section.collapsed {
+        padding: 1rem 1.5rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.3rem;
+    }
+    
+     .instagram-container {
+        padding: 1.5rem;
+        margin-bottom: 2rem; /* Espaçamento adequado no mobile */
     }
     
     .instagram-header {
@@ -759,70 +681,21 @@ main {
     }
     
     .instagram-text h3 {
-        font-size: 1.3rem; /* Seguindo o padrão do accordion-title */
+        font-size: 1.3rem;
     }
     
     .instagram-content p {
-        font-size: 1rem;
-        text-align: center;
+        margin-bottom: 1.5rem;
     }
     
     .instagram-button {
         padding: 0.875rem 1.5rem;
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .instagram-text h3 {
-        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
     }
     
-    .instagram-text p {
-        font-size: 0.9rem;
-    }
-    
-    .instagram-content p {
-        font-size: 0.95rem;
-    }
-}
-
-/* Remove a animação float para seguir o padrão mais clean */
-@media (prefers-reduced-motion: reduce) {
-    .instagram-container {
-        transition: none;
-    }
-    
-    .instagram-button {
-        transition: none;
-    }
-    
-    .instagram-button svg {
-        transition: none;
-    }
-    
-    .instagram-icon {
-        transition: none;
-    }
-}
-
-@media (max-width: 768px) {
     .carousel {
         height: 350px;
-    }
-    
-    .carousel-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-    }
-    
-    .carousel-btn-prev {
-        left: 15px;
-    }
-    
-    .carousel-btn-next {
-        right: 15px;
     }
     
     .carousel-indicators {
@@ -835,75 +708,6 @@ main {
         height: 12px;
     }
     
-    .carousel-counter {
-        top: 15px;
-        right: 15px;
-        padding: 6px 12px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel {
-        height: 280px;
-    }
-    
-    .carousel-container {
-        margin: 1rem 0 2rem 0;
-        border-radius: 15px;
-    }
-    
-    .carousel-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-    
-    .carousel-btn-prev {
-        left: 10px;
-    }
-    
-    .carousel-btn-next {
-        right: 10px;
-    }
-    
-    .carousel-indicators {
-        padding: 1rem;
-        gap: 0.5rem;
-    }
-    
-    .carousel-indicator {
-        width: 10px;
-        height: 10px;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: scale(1.1);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.carousel-slide.active {
-    animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-@media (prefers-reduced-motion: reduce) {
-    .carousel-slide,
-    .carousel-btn,
-    .carousel-indicator {
-        transition: none;
-    }
-    
-    .carousel-slide.active {
-        animation: none;
-    }
-}
-
-@media (max-width: 768px) {
     .drink-menu {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -911,10 +715,6 @@ main {
     
     .drink-category {
         padding: 0.75rem;
-    }
-    
-    .category-header {
-        margin-bottom: 0.75rem;
     }
     
     .category-icon {
@@ -941,12 +741,39 @@ main {
 }
 
 @media (max-width: 480px) {
-    .drink-menu {
-        gap: 0.75rem;
+    header {
+        padding: 1.5rem 0.5rem;
     }
     
-    .drink-category {
-        padding: 0.5rem;
+    .header-content {
+        gap: 1rem;
+    }
+    
+    .instagram-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instagram-text p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel {
+        height: 280px;
+    }
+    
+    .carousel-container {
+        margin: 1rem 0 2rem 0;
+        border-radius: 15px;
+    }
+    
+    .carousel-indicators {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
     }
     
     .drink-item {
@@ -964,31 +791,19 @@ main {
     }
 }
 
-@media (max-width: 768px) {
-    .accordion-section {
-        padding: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .accordion-section.collapsed {
-        padding: 1rem 1.5rem;
-    }
-    
-    .accordion-title {
-        font-size: 1.3rem;
-    }
-    
-    .accordion-content {
-        padding: 0.8rem;
-    }
-}
-
+/* Preferências de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
-    .accordion-section,
-    .accordion-content,
-    .accordion-title,
-    .accordion-icon::before,
-    .accordion-icon::after {
-        transition: none;
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .header-logo:hover {
+        transform: none;
+    }
+    
+    .carousel-slide.active {
+        animation: none;
     }
 }
