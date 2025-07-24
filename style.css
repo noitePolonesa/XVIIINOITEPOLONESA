@@ -607,6 +607,205 @@ main {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
+.instagram-section {
+    margin-bottom: 1.5rem; /* Mesmo espaçamento dos outros sections */
+}
+
+.instagram-container {
+    background: white; /* Fundo branco como os outros sections */
+    border-radius: 10px; /* Mesmo border-radius dos accordion-section */
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Mesma sombra dos accordion-section */
+    transition: all 0.4s ease;
+    border: 2px solid rgba(220, 20, 60, 0.1); /* Borda sutil vermelha */
+    position: relative;
+}
+
+.instagram-container:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    border-color: rgba(220, 20, 60, 0.2);
+}
+
+.instagram-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #dc143c, #b91c3c, #dc143c);
+    border-radius: 10px 10px 0 0;
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.instagram-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #dc143c, #8b0000);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.instagram-icon:hover {
+    transform: scale(1.05);
+}
+
+.instagram-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.instagram-icon svg path {
+    fill: white; /* Ícone branco sobre fundo vermelho */
+}
+
+.instagram-text h3 {
+    color: #dc143c; /* Vermelho como os títulos dos accordion */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+.instagram-container:hover .instagram-text h3 {
+    color: #8b0000; /* Escurece no hover como os accordion */
+}
+
+.instagram-text p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.instagram-content {
+    text-align: center; /* Centraliza todo o conteúdo */
+}
+
+.instagram-content p {
+    color: #555; /* Mesma cor do texto dos accordion */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Garante que o texto também fique centralizado */
+}
+
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #dc143c, #8b0000); /* Gradiente vermelho */
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    border: 2px solid transparent;
+    margin: 0 auto; /* Centraliza o botão */
+}
+
+.instagram-button:hover {
+    background: linear-gradient(135deg, #8b0000, #dc143c);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.instagram-button svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.instagram-button:hover svg {
+    transform: translate(2px, -2px);
+}
+
+/* Responsividade seguindo o padrão dos accordion */
+@media (max-width: 768px) {
+    .instagram-container {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .instagram-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .instagram-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .instagram-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .instagram-text h3 {
+        font-size: 1.3rem; /* Seguindo o padrão do accordion-title */
+    }
+    
+    .instagram-content p {
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .instagram-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instagram-text p {
+        font-size: 0.9rem;
+    }
+    
+    .instagram-content p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Remove a animação float para seguir o padrão mais clean */
+@media (prefers-reduced-motion: reduce) {
+    .instagram-container {
+        transition: none;
+    }
+    
+    .instagram-button {
+        transition: none;
+    }
+    
+    .instagram-button svg {
+        transition: none;
+    }
+    
+    .instagram-icon {
+        transition: none;
+    }
+}
+
 @media (max-width: 768px) {
     .carousel {
         height: 350px;

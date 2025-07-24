@@ -4,7 +4,6 @@ const eventData = {
         categories: [
             {
                 name: "Cervejas",
-                icon: "🍺",
                 items: [
                     { name: "Cerveja Brahma", price: "R$ 8,00" },
                     { name: "Cerveja Heineken", price: "R$ 12,00" },
@@ -13,7 +12,6 @@ const eventData = {
             },
             {
                 name: "Vinhos",
-                icon: "🍷",
                 items: [
                     { name: "Vinho Tinto", price: "R$ 25,00" },
                     { name: "Vinho Branco", price: "R$ 22,00" }
@@ -21,7 +19,6 @@ const eventData = {
             },
             {
                 name: "Destilados",
-                icon: "🥃",
                 items: [
                     { name: "Vodka Nacional", price: "R$ 10,00" },
                     { name: "Whisky", price: "R$ 18,00" },
@@ -30,7 +27,6 @@ const eventData = {
             },
             {
                 name: "Sem Álcool",
-                icon: "🥤",
                 items: [
                     { name: "Refrigerante 350ml", price: "R$ 5,00" },
                     { name: "Água Mineral", price: "R$ 3,00" },

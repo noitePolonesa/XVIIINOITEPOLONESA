@@ -32,10 +32,10 @@ class AccordionManager {
     
     const contentId = `accordion-content-${index}`;
     
-    section.classList.add('accordion-section', 'collapsed'); // Adiciona 'collapsed' por padrão
+    section.classList.add('accordion-section', 'collapsed');
     section.setAttribute('tabindex', '0');
     section.setAttribute('role', 'button');
-    section.setAttribute('aria-expanded', 'false'); // Muda para 'false'
+    section.setAttribute('aria-expanded', 'false');
     section.setAttribute('aria-label', `Clique para expandir ou recolher ${header.textContent}`);
     
     header.classList.add('accordion-title');
