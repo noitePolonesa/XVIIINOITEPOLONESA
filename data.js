@@ -51,14 +51,18 @@ const eventData = {
         title: "Casa Polaski",
         content: "A sede da Associação encontra-se situada no Bairro Histórico de Alto Paraguaçu, conhecida também como Casa Polaski, foi construída em 1928, tendo como seus primeiros proprietários Theodora Smangorzewski e Martha Minikowka, já abrigou um armazém e um banco. \n\nO comércio foi fechado no final da década de 1940, e a casa vendida. A família Polaski foi a última proprietária. O imóvel foi adquirido e restaurado pelo Instituto do Patrimônio Histórico e Artístico Nacional (Iphan) e devolvido à comunidade com direito de administração concedido à Associação Cultural Polonesa de Itaiópolis. \n\nHoje além da sede do grupo Więsy Polski, a Casa Polaski abriga eventos como café colonial, colônia de férias, cursos de artesanato e polonês além de servir como hostel."
     },
-    programacao: {
-        title: "Programação",
-        content: [
-            "Abertura: 19h",
-            "Jantar: 20h",
-            "Apresentação Cultural: 21h"
-        ]
-    },
+   programacao: {
+    title: "Programação",
+    content: [
+        "18h30 – Recepção",
+        "18h45 – Entrada com Sopas",
+        "20h00 – Apresentações Folclóricas",
+        "20h45 – Quebra Gelo e Brinde da Vodka",
+        "21h15 – Jantar Típico Polonês",
+        "22h30 – Baile com Ignácio Arendt ",
+        "02h00 – Café Colonial da Madrugada "
+    ]
+},
     sobreJantar: {
         title: "Sobre o Jantar",
         content: "A 18ª Noite Polonesa é um evento anual que celebra a rica cultura polonesa com música, dança e gastronomia tradicional."
