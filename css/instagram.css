@@ -1,0 +1,123 @@
+.instagram-container {
+    background: white;
+    border-radius: var(--border-radius-medium);
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-medium);
+    margin-bottom: 2.5rem;
+    border: 2px solid rgba(220, 20, 60, 0.1);
+    position: relative;
+}
+
+.instagram-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #b91c3c, var(--primary-color));
+    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+.instagram-container:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    border-color: rgba(220, 20, 60, 0.2);
+}
+
+.instagram-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.instagram-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.instagram-icon:hover {
+    transform: scale(1.05);
+}
+
+.instagram-icon svg {
+    width: 35px;
+    height: 35px;
+}
+
+.instagram-icon svg path {
+    fill: white;
+}
+
+.instagram-text h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+.instagram-container:hover .instagram-text h3 {
+    color: var(--primary-dark);
+}
+
+.instagram-text p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.instagram-content {
+    text-align: center;
+}
+
+.instagram-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.instagram-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+    border: 2px solid transparent;
+    margin-bottom: 1rem;
+}
+
+.instagram-button:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.instagram-button svg {
+    width: 18px;
+    height: 18px;
+    transition: var(--transition-smooth);
+}
+
+.instagram-button:hover svg {
+    transform: translate(2px, -2px);
+}

@@ -1,0 +1,339 @@
+/* Responsividade */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 2rem;
+    }
+    
+    .header-text {
+        text-align: left;
+        flex: 1;
+    }
+    
+    .header-logo {
+        max-width: 140px;
+        max-height: 140px;
+    }
+    
+    .header-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .header-text p {
+        font-size: 1.3rem;
+    }
+    
+    /* Sponsors */
+    .sponsors-logo {
+        width: 700px;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 3rem 2rem;
+    }
+    
+    .header-logo {
+        max-width: 160px;
+        max-height: 160px;
+    }
+    
+    .header-text h1 {
+        font-size: 3.2rem;
+    }
+    
+    .header-text p {
+        font-size: 1.4rem;
+    }
+    
+    .header-content {
+        gap: 3rem;
+    }
+    
+    /* Sponsors */
+    .sponsors-logo {
+        width: 750px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    .header-logo {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    .header-text h1 {
+        font-size: 2rem;
+    }
+    
+    .header-text p {
+        font-size: 1rem;
+    }
+    
+    /* Sponsors */
+    .sponsors-container {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .sponsors-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .sponsors-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .sponsors-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .sponsors-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .sponsors-logo {
+        width: 550px;
+    }
+    
+    .sponsors-logo-container {
+        padding: 1.5rem;
+    }
+    
+    .sponsors-content p {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Cards Base */
+    .card-base {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Accordion */
+    .accordion-section.collapsed {
+        padding: 1rem 1.5rem;
+    }
+    
+    .accordion-title {
+        font-size: 1.3rem;
+    }
+    
+    /* Instagram */
+    .instagram-container {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .instagram-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .instagram-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .instagram-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .instagram-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .instagram-content p {
+        margin-bottom: 1.5rem;
+    }
+    
+    .instagram-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Review */
+    .review-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .review-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .review-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .review-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .review-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .review-features {
+        gap: 1rem;
+        justify-content: space-around;
+    }
+    
+    .feature-item {
+        font-size: 0.85rem;
+    }
+    
+    .feature-icon {
+        font-size: 1rem;
+    }
+    
+    /* Carousel */
+    .carousel {
+        height: 350px;
+    }
+    
+    .carousel-indicators {
+        padding: 1.25rem 1rem;
+        gap: 0.75rem;
+    }
+    
+    .carousel-indicator {
+        width: 12px;
+        height: 12px;
+    }
+    
+    /* Drink Menu */
+    .drink-menu {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .drink-category {
+        padding: 0.75rem;
+    }
+    
+    .category-icon {
+        font-size: 1.3rem;
+        margin-right: 0.5rem;
+    }
+    
+    .category-name {
+        font-size: 1rem;
+    }
+    
+    .drink-item {
+        padding: 0.5rem 0;
+    }
+    
+    .drink-name {
+        font-size: 0.9rem;
+    }
+    
+    .drink-price {
+        font-size: 0.85rem;
+        min-width: 65px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .header-content {
+        gap: 1rem;
+    }
+    
+    /* Sponsors */
+    .sponsors-logo {
+        width: 450px;
+    }
+    
+    .sponsors-logo-container {
+        padding: 1rem;
+    }
+    
+    .sponsors-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .sponsors-text p {
+        font-size: 0.9rem;
+    }
+    
+    .instagram-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instagram-text p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel {
+        height: 280px;
+    }
+    
+    .carousel-container {
+        margin: 1rem 0 2rem 0;
+        border-radius: 15px;
+    }
+    
+    .carousel-indicators {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .drink-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .drink-name {
+        margin-right: 0;
+    }
+    
+    .drink-price {
+        align-self: flex-end;
+    }
+}
+
+/* Preferências de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .header-logo:hover {
+        transform: none;
+    }
+    
+    .sponsors-logo:hover {
+        transform: none;
+    }
+    
+    .carousel-slide.active {
+        animation: none;
+    }
+}

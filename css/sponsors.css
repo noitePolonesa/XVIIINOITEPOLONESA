@@ -1,0 +1,121 @@
+/* Sponsors Section */
+.sponsors-section {
+    margin-bottom: 2rem;
+}
+
+.sponsors-container {
+    background: white;
+    border-radius: var(--border-radius-medium);
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition-medium);
+    margin-bottom: 2.5rem;
+    border: 2px solid rgba(220, 20, 60, 0.1);
+    position: relative;
+}
+
+.sponsors-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-color), #b91c3c, var(--primary-color));
+    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+}
+
+.sponsors-container:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
+    border-color: rgba(220, 20, 60, 0.2);
+}
+
+.sponsors-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.sponsors-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.sponsors-icon:hover {
+    transform: scale(1.05);
+}
+
+.sponsors-icon svg {
+    width: 35px;
+    height: 35px;
+    color: white;
+}
+
+.sponsors-text h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem 0;
+    transition: color 0.3s ease;
+}
+
+.sponsors-container:hover .sponsors-text h3 {
+    color: var(--primary-dark);
+}
+
+.sponsors-text p {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.sponsors-content {
+    text-align: center;
+}
+
+.sponsors-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.sponsors-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(255, 215, 0, 0.05);
+    border-radius: var(--border-radius-medium);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.sponsors-logo-container:hover {
+    background: rgba(255, 215, 0, 0.08);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.sponsors-logo {
+    max-width: 100%;
+    width: 650px;
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition-smooth);
+    filter: brightness(1.05) contrast(1.05);
+}
+
+.sponsors-logo:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1) contrast(1.1);
+}
