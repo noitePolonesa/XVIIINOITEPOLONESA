@@ -22,7 +22,7 @@ class ContentManager {
         this.populateSectionWithAchievements('associacao', window.eventData.associacao, 'preserve-breaks');
         this.populateSectionWithClass('casa', window.eventData.casa, 'preserve-breaks');
         this.populateListSection('programacao', window.eventData.programacao);
-        this.populateSection('sobre-jantar', window.eventData.sobreJantar);
+        this.populateSectionWithAchievements('sobre-jantar', window.eventData.sobreJantar, 'preserve-breaks');
         this.populateListSection('integrantes', window.eventData.integrantes);
     }
 

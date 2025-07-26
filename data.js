@@ -65,7 +65,7 @@ const eventData = {
     },
     casa: {
         title: "Casa Polaski",
-        content: "A sede da Associação encontra-se situada no Bairro Histórico de Alto Paraguaçu, conhecida também como Casa Polaski, foi construída em 1928, tendo como seus primeiros proprietários Theodora Smangorzewski e Martha Minikowka, já abrigou um armazém e um banco. \n\nO comércio foi fechado no final da década de 1940, e a casa vendida. A família Polaski foi a última proprietária. O imóvel foi adquirido e restaurado pelo Instituto do Patrimônio Histórico e Artístico Nacional (Iphan) e devolvido à comunidade com direito de administração concedido à Associação Cultural Polonesa de Itaiópolis. \n\nHoje além da sede do grupo Więsy Polski, a Casa Polaski abriga eventos como café colonial, colônia de férias, cursos de artesanato e polonês além de servir como hostel."
+        content: "A sede da Associação encontra-se situada no Bairro Histórico de Alto Paraguaçu, conhecida também como Casa Polaski, foi construída em 1928, tendo como seus primeiros proprietários Theodoro Smangorzewski e Martha Minikowka, já abrigou um armazém e um banco. \n\nO comércio foi fechado no final da década de 1940, e a casa vendida. A família Polaski foi a última proprietária. O imóvel foi adquirido e restaurado pelo Instituto do Patrimônio Histórico e Artístico Nacional (Iphan) e devolvido à comunidade com direito de administração concedido à Associação Cultural Polonesa de Itaiópolis. \n\nHoje, além de sede da Associação, a Casa Polaski abriga um hostel voltado a cultura, turismo e educação patrimonial, e também abriga diversos eventos, promoções, aulas de polonês e aulas de dança folcórica, oficinas culturais e a Colônia de Férias Górale. \n\nEm parceria com o Consulado Geral da República da Polônia em Curitiba, a casa está aberta para visitação aos sábados e domingos, das 13:30 as 17:00, sendo possível visitar sua rica arquitetura e adquirir produtos artesanais e coloniais produzidos pela comunidade."
     },
    programacao: {
     title: "Programação",
@@ -80,9 +80,19 @@ const eventData = {
     ]
 },
     sobreJantar: {
-        title: "Sobre o Jantar",
-        content: "A 18ª Noite Polonesa é um evento anual que celebra a rica cultura polonesa com música, dança e gastronomia tradicional."
+        title: "Noite Polonesa- NOC POLSKA",
+        content: "A Noite Polonesa é um dos eventos mais tradicionais promovidos pela Associação Cultural Polonesa de Itaiópolis, são 18 edições, e tem objetivo de valorizar e celebrar a herança cultural polonesa no município.\n\nA programação oferece uma verdadeira imersão nas tradições da Polônia, com: \n\n",
+        achievements: [
+         "Entrada com sopas polonesas",
+         "Apresentações folclóricas de danças típicas",
+         "Jantar com comidas tradicionais",
+         "Baile com músicas típicas",
+         "Café colonial na madrugada.",
+         "Lojinha com artesanato e produtos locais.",
+         "O evento é realizado com o envolvimento de voluntários da comunidade e atrai moradores e turistas em busca de uma experiência cultural autêntica, marcada pela gastronomia, música, dança e hospitalidade."
+       ]
     },
+
     integrantes: {
         title: "Integrantes do Grupo Więzy Polskie",
         content: [
