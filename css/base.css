@@ -48,6 +48,7 @@ main {
 
 .preserve-breaks {
     white-space: pre-line;
+    text-align: justify;
 }
 
 @keyframes slideIn {
