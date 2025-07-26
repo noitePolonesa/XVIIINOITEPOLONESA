@@ -19,7 +19,7 @@ class ContentManager {
         this.populateMenuSection('cardapioDeBebidas', window.eventData.cardapioDeBebidas);
         this.populateSection('cidade', window.eventData.cidade);
         this.populateSectionWithClass('grupo', window.eventData.grupo, 'preserve-breaks');
-        this.populateSectionWithClass('associacao', window.eventData.associacao, 'preserve-breaks');
+        this.populateSectionWithAchievements('associacao', window.eventData.associacao, 'preserve-breaks');
         this.populateSectionWithClass('casa', window.eventData.casa, 'preserve-breaks');
         this.populateListSection('programacao', window.eventData.programacao);
         this.populateSection('sobre-jantar', window.eventData.sobreJantar);
@@ -86,7 +86,7 @@ class ContentManager {
     const content = section.querySelector('p');
     if (content && typeof data.content === 'string') {
         content.textContent = data.content;
-        content.classList.add('preserve-breaks'); // Adiciona sempre a classe
+        content.classList.add('preserve-breaks'); 
     }
 }
 
@@ -119,6 +119,34 @@ class ContentManager {
             });
         }
     }
+
+    populateSectionWithAchievements(sectionId, data, cssClass) {
+    const section = document.getElementById(sectionId);
+    if (!section || !data) return;
+    
+    const title = section.querySelector('h2');
+    if (title) title.textContent = data.title;
+    
+    const content = section.querySelector('p');
+    if (content && typeof data.content === 'string') {
+        content.textContent = data.content;
+        content.classList.add(cssClass);
+    }
+    const existingList = section.querySelector('ul');
+    if (existingList) existingList.remove();
+    if (data.achievements && Array.isArray(data.achievements)) {
+        const achievementsList = document.createElement('ul');
+        achievementsList.className = 'achievements-list';
+        
+        data.achievements.forEach(achievement => {
+            const li = document.createElement('li');
+            li.textContent = achievement;
+            achievementsList.appendChild(li);
+        });
+        
+        section.appendChild(achievementsList);
+    }
+}
 }
 
 new ContentManager();

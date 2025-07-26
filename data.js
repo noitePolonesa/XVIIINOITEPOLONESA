@@ -44,8 +44,24 @@ const eventData = {
         content: "foi fundado em 24 de agosto de 2004, e neste ano completará 21 anos de história. O grupo é administrado pela Associação Cultural Polonesa de Itaiópolis, e hoje, o conta com cerca de 50 dançarinos, distribuídos entre os grupos adulto, juvenil e infantil. \n\nA origem do grupo remonta à iniciativa da Paróquia Santo Estanislau, localizada no Bairro Alto Paraguaçu, em Itaiópolis, juntamente com alguns moradores da comunidade, onde incentivaram os jovens a formarem o Grupo Folclórico Polonês Więzy Polskie — nome que significa 'Laços Poloneses'. Essa denominação foi criada como uma homenagem aos descendentes de poloneses, em reconhecimento ao Bairro Alto Paraguaçu, hoje Núcleo Histórico Alto Paraguaçu. \n\nHoje, o grupo tem como principal objetivo divulgar o folclore da cultura polonesa e promover o município de Itaiópolis, reconhecido por Lei como a Capital Catarinense da Cultura Polonesa. Além disso, busca divulgar o Núcleo Histórico, tambado como Patrimônio Nacional."
     },
     associacao: {
-        title: "Associação Cultural Polonesa de Itaiópolis",
-        content: "A associação Cultural polonesa de Itaiópolis tem como principal objetivo divulgar e manter viva a cultura polonesa. \n\nEntre suas atividades se destacam o Grupo Folclórico Polonês Więzy Polskie, trabalhos artesanais, aulas de idioma polonês, exposições de artes, jantares típicos, Bodega Polaski, Café moo Colonial e Hostel da Casa Polaski. \n\nA fundação ocorreu em 14 de julho de 2005 e desde então trabalha em prol da conservação e promoção da cultura polonesa."
+        title: "Na zdrowie - 20 anos da Associação Cultural Polonesa de Itaiópolis",
+        content: "A Associação Cultural Polonesa de Itaiópolis é uma entidade de direito privado, fundada em 14 de julho de 2005, com sede na Rua Padre João Kominek, nº 120, bairro Alto Paraguaçu, Itaiópolis/SC. Está registrada sob o CNPJ nº 07.661.335/0001-08 e tem como objetivo principal promover a cultura polonesa, além de preservar e conservar o patrimônio histórico e artístico da comunidade polonesa no município.\n\nNeste ano, completou seus 20 anos de atuação, conheça algumas das ações já realizadas:\n\n",
+        achievements: [
+        "Administração do Grupo Folclórico Polonês Więzy Polskie",
+        "Administração da Casa Polaski (aberta para visitação aos sábados e domingos - 13:30/17:00)",
+        "Aulas de Polonês através da ORPEG",
+        "Bodega Polaski",
+        "Café Colonial",
+        "Colônia de Férias Górale",
+        "Lançamento do Livro: Itaiópolis, 100 anos",
+        "Lançamento do Livro: Tradicionais Contos Poloneses e Brasileiros",
+        "Teatro Natalino - Górale",
+        "Recepção e imersão na cultura polonesa de turistas",
+        "Oficinas culturais de artesanato polonês e culinária",
+        "Caminhadas ecológicas",
+        "Exposições",
+        "18 edições da Noite Polonesa"
+    ]
     },
     casa: {
         title: "Casa Polaski",
