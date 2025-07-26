@@ -12,8 +12,8 @@
     }
     
     .header-logo {
-        max-width: 140px;
-        max-height: 140px;
+        max-width: 220px;
+        max-height: 220px;
     }
     
     .header-text h1 {
@@ -35,9 +35,9 @@
         padding: 3rem 2rem;
     }
     
-    .header-logo {
-        max-width: 160px;
-        max-height: 160px;
+     .header-logo {
+        max-width: 240px;
+        max-height: 240px;
     }
     
     .header-text h1 {
@@ -61,8 +61,8 @@
 @media (max-width: 768px) {
     /* Header */
     .header-logo {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 150px;
+        max-height: 150px;
     }
     
     .header-text h1 {
