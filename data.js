@@ -36,8 +36,8 @@ const eventData = {
         ]
     },
     cidade: {
-        title: "Itaiópolis... A Capital Catarinense da Cultura Polonesa",
-        content: "Devido ao elevado número de habitantes poloneses no município e a relevância cultural no estado de Santa Catarina, Itaiópolis ficou reconhecida como a capital catarinense da cultura polonesa pela Lei 12.654 de 18 de setembro 2003 procedente do Deputado Mauro Mariani, também pela Lei 14.174 de 26 de outubro de 2007 de procedência do Deputado Antônio Aguiar institui-se no dia 03 de maio como dia estadual da imigração polonesa do estado de Santa Catarina. E através da Lei Municipal 248 de 03 de abril de 2008 de procedência do Vereador Claudinor Krajevski institui se dia 03 de maio como dia municipal da comunidade polonesa do município de Itaiópolis."
+        title: "Itaiópolis... Capital Catarinense da Cultura Polonesa",
+        content: "Itaiópolis é reconhecida como a Capital Catarinense da Cultura Polonesa devido à forte presença de descendentes de imigrantes poloneses e à preservação ativa de suas tradições. O município destaca-se pela rica herança cultural trazida pelos primeiros colonizadores, que, através de danças típicas, festas tradicionais, gastronomia, música e costumes, mantém viva a memória polonesa de geração em geração. \n\nEssa herança cultural é celebrada e fortalecida a cada ano com  passagem das datas de 2 e 3 de maio, datas que se comemoram o dia da Bandeira Polonesa, dia da Constituição Polonesa, Dia da Comunidade Polonesa no Exterior, Dia da Cultura Polonesa em Santa Catarina e Dia da Comunidade Polonesa em Itaiópolis, sendo uma homenagem direta às tradições e contribuições que formaram a identidade cultural do município, reforçando ainda mais o orgulho e a preservação desse legado."
     },
     grupo: {
         title: "Grupo folclórico polonês więzy Polskie",

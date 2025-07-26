@@ -79,15 +79,16 @@ class ContentManager {
     }
 
     populateSection(sectionId, data) {
-        const section = document.getElementById(sectionId);
-        if (!section || !data) return;
-        const title = section.querySelector('h2');
-        if (title) title.textContent = data.title;
-        const content = section.querySelector('p');
-        if (content && typeof data.content === 'string') {
-            content.textContent = data.content;
-        }
+    const section = document.getElementById(sectionId);
+    if (!section || !data) return;
+    const title = section.querySelector('h2');
+    if (title) title.textContent = data.title;
+    const content = section.querySelector('p');
+    if (content && typeof data.content === 'string') {
+        content.textContent = data.content;
+        content.classList.add('preserve-breaks'); // Adiciona sempre a classe
     }
+}
 
     populateSectionWithClass(sectionId, data, cssClass) {
         const section = document.getElementById(sectionId);
@@ -99,6 +100,7 @@ class ContentManager {
             content.textContent = data.content;
             content.classList.add(cssClass);
         }
+        
     }
 
     populateListSection(sectionId, data) {
