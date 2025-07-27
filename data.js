@@ -117,8 +117,15 @@ const eventData = {
        ]
     },
 
-    integrantesAdultos: {
-    title: "Dançarinos Grupo Adulto",
+    // integrantesAdultos: {
+    // title: "Dançarinos Grupo Adulto",
+    // content: [
+        
+    // ]
+    // },
+
+    integrantes: {
+    title: "Dançarinos Grupo",
     content: [
         "Aline Lis Bauer",
          "Alex Lis", 
@@ -130,13 +137,7 @@ const eventData = {
          "Gisele Maria Rodycz", 
          "João Ricardo Alves dos Santos", 
          "Rodrigo Mikley Bilobran", 
-         "Talita Rogalewski"
-    ]
-    },
-
-    integrantes: {
-    title: "Dançarinos Grupo Infantil e Juvenil",
-    content: [
+         "Talita Rogalewski",
         "Alice Duffeck Rodycz",
         "Amanda Gelbcke",
         "Ana Carolina Adriano",
