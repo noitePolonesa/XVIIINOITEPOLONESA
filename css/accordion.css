@@ -69,11 +69,11 @@
 }
 
 .accordion-icon::after {
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-50%, -50%) rotate(0deg);
 }
 
 .accordion-section.collapsed .accordion-icon::after {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .accordion-content {
@@ -104,7 +104,7 @@
     line-height: 1.7;
     color: #555;
     margin-bottom: 0.75rem;
-    padding-right: 1rem;
+    
 }
 
 .accordion-content li:last-child {

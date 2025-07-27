@@ -26,6 +26,7 @@ class ContentManager {
         this.populateListSection('integrantes', window.eventData.integrantes);
         this.populateSectionWithAchievements('Apoiadores', window.eventData.Apoiadores, 'preserve-breaks');
         this.populateSponsorsSection('infoPatrocinadores', window.eventData.infoPatrocinadores);
+        this.populateListSection('integrantesAdultos', window.eventData.integrantesAdultos);
     }
 
     populateMenuSection(sectionId, data) {

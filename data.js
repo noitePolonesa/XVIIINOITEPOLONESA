@@ -117,6 +117,23 @@ const eventData = {
        ]
     },
 
+    integrantesAdultos: {
+    title: "Dançarinos Grupo Adulto",
+    content: [
+        "Aline Lis Bauer",
+         "Alex Lis", 
+         "Ana Flavia Rogalski", 
+         "Carlos Daniel Jacintho de Souza", 
+         "Catarina Wielewski", "Clara Lis Bauer", 
+         "Clarisa Aparecida Freza", "Dirceu Labas", 
+         "Diovane Junior Pickcius Strobel", 
+         "Gisele Maria Rodycz", 
+         "João Ricardo Alves dos Santos", 
+         "Rodrigo Mikley Bilobran", 
+         "Talita Rogalewski"
+    ]
+    },
+
     integrantes: {
     title: "Dançarinos Grupo Infantil e Juvenil",
     content: [
