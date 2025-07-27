@@ -110,6 +110,11 @@
         padding: 1.5rem;
         margin-bottom: 1rem;
     }
+
+    .accordion-content {
+        padding: 1.5rem 1rem;
+        margin: 0 -0.5rem;
+    }
     
     .accordion-section.collapsed {
         padding: 1rem 1.5rem;
@@ -272,6 +277,11 @@
     
     .carousel {
         height: 230px;
+    }
+
+    .accordion-content {
+        padding: 1.25rem 0.75rem;
+        margin: 0 -0.25rem;
     }
     
     .carousel-container {

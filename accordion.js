@@ -128,8 +128,8 @@ class AccordionManager {
         
         requestAnimationFrame(() => {
             content.style.height = height + 'px';
-            content.style.paddingTop = '1rem';
-            content.style.paddingBottom = '1rem';
+            content.style.paddingTop = '2rem';
+            content.style.paddingBottom = '2rem';
             content.style.opacity = '1';
         });
         

@@ -16,7 +16,6 @@ class CarouselManager {
             'image/carousel/12.jpg',
             'image/carousel/13.jpg',
             'image/carousel/14.jpg',
-            'image/carousel/15.jpg',
         ];
         this.autoSlideInterval = null;
         this.modalCurrentIndex = 0;

@@ -81,28 +81,30 @@
     transition: height 0.4s ease, padding 0.4s ease, opacity 0.3s ease;
     background: rgba(220, 20, 60, 0.02);
     border-radius: 6px;
-    padding: 1rem;
+    padding: 2rem 1.5rem;
     opacity: 1;
+    margin: 0 -1rem;
 }
 
 .accordion-content p {
-    margin: 0;
+    margin: 0 0 1rem 0;
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #555;
 }
 
 .accordion-content ul {
-    margin: 0;
-    padding-left: 1.5rem;
+    margin: 1rem 0;
+    padding-left: 2rem;
     list-style-type: disc;
 }
 
 .accordion-content li {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: #555;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding-right: 1rem;
 }
 
 .accordion-content li:last-child {
