@@ -138,6 +138,9 @@ class ContentManager {
     const existingList = section.querySelector('ul');
     if (existingList) existingList.remove();
     
+    const existingImages = section.querySelector('.supporter-images');
+    if (existingImages) existingImages.remove();
+    
     if (data.achievements && Array.isArray(data.achievements)) {
         const achievementsList = document.createElement('ul');
         achievementsList.className = 'achievements-list';
@@ -150,6 +153,21 @@ class ContentManager {
         });
         
         section.appendChild(achievementsList);
+    }
+    
+    if (data.supporterImages && Array.isArray(data.supporterImages)) {
+        const imagesContainer = document.createElement('div');
+        imagesContainer.className = 'supporter-images';
+        
+        data.supporterImages.forEach(image => {
+            const imgElement = document.createElement('img');
+            imgElement.src = image.src;
+            imgElement.alt = image.alt;
+            imgElement.className = 'supporter-image';
+            imagesContainer.appendChild(imgElement);
+        });
+        
+        section.appendChild(imagesContainer);
     }
 }
 

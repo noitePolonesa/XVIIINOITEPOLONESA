@@ -42,7 +42,21 @@ const eventData = {
             "Prefeitura Municipal de Itaiópolis: \n\nA Prefeitura de Itaiópolis é uma parceira fundamental em nossas atividades. Por meio de repasses financeiros, contribui diretamente para a aquisição de trajes típicos utilizados pelo grupo folclórico e para a manutenção das aulas de língua polonesa, beneficiando crianças, jovens e adultos que desejam aprender o idioma e manter vivas as tradições de seus antepassados.\n\n",
             "Consulado da República da Polônia em Curitiba: \n\nO Consulado da Polônia também tem sido um grande incentivador da cultura em nossa região. Sua colaboração viabiliza duas ações de grande impacto:\n1. Apoio à realização de eventos culturais que promovem a cultura polonesa.\n2. Contribuição para a preservação do patrimônio cultural polonês em Itaiópolis. \n\n - A Colônia de Férias Górale, realizada durante o recesso escolar, que atende cerca de 50 crianças com atividades culturais, recreativas e educativas, todas voltadas à cultura polonesa; \n\n-O apoio à abertura da Casa Polaski ao público, permitindo a realização de eventos e visitas culturais, além de abrigar um lojinha de artesanto e produtos locais.\n\n",
             "ORPEG (Ośrodek Rozwoju Polskiej Edukacji za Granicą) \n\nA ORPEG, instituição ligada ao governo da Polônia, desempenha um papel essencial no fortalecimento do ensino da língua polonesa em Itaiópolis. Por meio de sua iniciativa, contamos com a presença de um professor nativo, que ministra aulas de polonês à comunidade local, garantindo uma formação linguística de qualidade e ainda mais conectada às raízes da cultura original.\n\n"
-        ]
+        ],
+        supporterImages: [
+        {
+            src: "image/Apoiadores/prefeitura.png",
+            alt: "Prefeitura Municipal de Itaiópolis"
+        },
+        {
+            src: "image/Apoiadores/Consulado.jpg", 
+            alt: "Consulado da República da Polônia"
+        },
+        {
+            src: "image/Apoiadores/ORPEG.png",
+            alt: "ORPEG"
+        }
+    ]
     },
     cidade: {
         title: "Itaiópolis... Capital Catarinense da Cultura Polonesa",
