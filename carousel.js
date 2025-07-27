@@ -2,8 +2,21 @@ class CarouselManager {
     constructor() {
         this.currentIndex = 0;
         this.images = [
-            'image/carousel/Igreja.jpg',
-            'image/carousel/logo.png',
+            'image/carousel/1.jpg',
+            'image/carousel/2.png',
+            'image/carousel/3.jpg',
+            'image/carousel/4.jpg',
+            'image/carousel/5.jpg',
+            'image/carousel/6.jpg',
+            'image/carousel/7.jpg',
+            'image/carousel/8.jpg',
+            'image/carousel/9.jpg',
+            'image/carousel/10.jpg',
+            'image/carousel/11.jpg',
+            'image/carousel/12.jpg',
+            'image/carousel/13.jpg',
+            'image/carousel/14.jpg',
+            'image/carousel/15.jpg',
         ];
         this.autoSlideInterval = null;
         this.init();
