@@ -104,13 +104,38 @@ const eventData = {
     },
 
     integrantes: {
-        title: "Integrantes do Grupo Więzy Polskie",
-        content: [
-            "Catarina W",
-            "Jean F",
-            "João P"
-        ]
-    },
+    title: "Dançarinos Grupo Infantil e Juvenil",
+    content: [
+        "Alice Duffeck Rodycz",
+        "Amanda Gelbcke",
+        "Ana Carolina Adriano",
+        "Ana Julia Mageroski",
+        "Anna Julia Ziemba",
+        "Antonio Paulo Lis Bauer",
+        "Bernardo Woiciechovski",
+        "Diogo Andrzejewski",
+        "Eduardo Davet De Jesus",
+        "Erika Sperka Novacki",
+        "Francisco Emanuel Penkal Kovalski",
+        "Heitor Luiz De Jesus",
+        "Helena Mengarda Jakubiak",
+        "Helena Woyszczak",
+        "Henrique Pamfil",
+        "Isabelly Rogalski",
+        "Julia Duffeck Rodycz",
+        "Julia Levandovski",
+        "Júlia Gaio Wielewski",
+        "Ketherine Amanda De Souza Camargo",
+        "Leticia Siviero Da Silva",
+        "Luisa Fernanda Alves",
+        "Mariah Bilicki De Deus Bueno",
+        "Maria Eduarda Mageroski",
+        "Mirella Karoline Rogalski",
+        "Nicolas Rogalevski",
+        "Paloma Szostak",
+        "Pietro José Ahrendt"
+    ]
+},
 
     infoPatrocinadores: {
     title: "Saiba Mais Sobre os Nossos Patrocinadores",
