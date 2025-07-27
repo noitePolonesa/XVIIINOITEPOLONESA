@@ -110,6 +110,75 @@ const eventData = {
             "Jean F",
             "João P"
         ]
-    }
+    },
+
+    infoPatrocinadores: {
+    title: "Saiba Mais Sobre os Nossos Patrocinadores",
+    categories: [
+        {
+            name: "Categoria OURO",
+            icon: "🏆",
+            sponsors: [
+                {
+                    name: "Bom Preço Utilidades Domésticas",
+                    address: "Av. Alexandre Ricardo Worell, 112 – Centro",
+                    phone: "(47) 3652-2561"
+                    
+                },
+                {
+                    name: "Casarão – Museu da Memória Regional",
+                    address: "Rua Alfredo Schneider, 1490 – Alto Paraguaçu",
+                    phone: "(47) 3305-3142"
+                },
+                {
+                    name: "Contabilidade Semmer",
+                    address: "Av. Getúlio Vargas, 386 – Centro",
+                    phone: "(47) 3652-2220"
+                },
+                {
+                    name: "Demais FM Planalto Norte",
+                    address: "Av. Alexandre Ricardo Worell, 89",
+                    phone: "(47) 99172-7403"
+                },
+                {
+                    name: "Odonto Excellence Itaiópolis",
+                    address: "Cel. Antônio Corrêia, 241 – Centro",
+                    phone: "(47) 3652-2237"
+                },
+                {
+                    name: "Pierogarnia Lis",
+                    address: "Rua Alfredo Schneider, 1536 – Alto Paraguaçu",
+                    phone: "(47) 99187-3327"
+                },
+                {
+                    name: "Rede Ita",
+                    address: "Av. Alexandre Ricardo Worell, 215 – Centro",
+                    phone: "(47) 99904-3318"
+                }
+            ]
+        },
+        {
+            name: "Categoria PRATA",
+            icon: "✨",
+            sponsors: [
+                {
+                    name: "Poduszka Café e Bistro",
+                    address: "Rua Manoel Pedro da Silveira, 1743 – Centro",
+                    phone: "(47) 99222-8976"
+                },
+                {
+                    name: "Sicredi Itaiópolis",
+                    address: "Av. Pres. Tancredo Neves, 16 – Centro",
+                    phone: "(47) 3627-4641"
+                },
+                {
+                    name: "Soetur Turismo",
+                    address: "Rua Henrique Koening – Bom Jesus",
+                    phone: "(47) 3652-2184"
+                }
+            ]
+        }
+    ]
+},  
 };
 window.eventData = eventData;

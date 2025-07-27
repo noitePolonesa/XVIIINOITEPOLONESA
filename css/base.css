@@ -51,6 +51,153 @@ main {
     text-align: justify;
 }
 
+.achievements-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+    list-style: none;
+}
+
+.achievements-list li {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.achievements-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.achievements-list li:hover {
+    color: #333;
+}
+
+.sponsor-category {
+    margin-bottom: 3rem;
+}
+
+.sponsor-category h3 {
+    font-size: 1.5rem;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.sponsors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.sponsor-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.sponsor-item:not(:last-child) {
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.sponsor-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+        to right, 
+        transparent, 
+        rgba(212, 175, 55, 0.8), 
+        transparent
+    );
+}
+
+.sponsor-item h4 {
+    font-size: 1.2rem;
+    color: #d4af37;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.sponsor-item p {
+    margin: 0.4rem 0;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .sponsor-category h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sponsor-item {
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sponsor-item:not(:last-child) {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .sponsor-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .sponsor-item p {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 480px) {
+    .sponsor-category {
+        margin-bottom: 2rem;
+    }
+    
+    .sponsor-category h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sponsor-item {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .sponsor-item:not(:last-child) {
+        padding-bottom: 1.2rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .sponsor-item:not(:last-child)::after {
+        width: 80%;
+    }
+    
+    .sponsor-item h4 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .sponsor-item p {
+        font-size: 0.85rem;
+        margin: 0.3rem 0;
+    }
+
 @keyframes slideIn {
     from {
         opacity: 0;
@@ -60,4 +207,5 @@ main {
         opacity: 1;
         transform: scale(1);
     }
+}
 }

@@ -25,6 +25,7 @@ class ContentManager {
         this.populateSectionWithAchievements('sobre-jantar', window.eventData.sobreJantar, 'preserve-breaks');
         this.populateListSection('integrantes', window.eventData.integrantes);
         this.populateSectionWithAchievements('Apoiadores', window.eventData.Apoiadores, 'preserve-breaks');
+        this.populateSponsorsSection('infoPatrocinadores', window.eventData.infoPatrocinadores);
     }
 
     populateMenuSection(sectionId, data) {
@@ -133,7 +134,7 @@ class ContentManager {
         content.textContent = data.content;
         content.classList.add(cssClass);
     }
-    
+
     const existingList = section.querySelector('ul');
     if (existingList) existingList.remove();
     
@@ -149,6 +150,46 @@ class ContentManager {
         });
         
         section.appendChild(achievementsList);
+    }
+}
+
+populateSponsorsSection(sectionId, data) {
+    const section = document.getElementById(sectionId);
+    if (!section || !data) return;
+    
+    const title = section.querySelector('h2');
+    if (title) title.textContent = data.title;
+    
+    // Remove conteúdo existente
+    const existingContent = section.querySelectorAll(':not(h2)');
+    existingContent.forEach(el => el.remove());
+    
+    if (data.categories && Array.isArray(data.categories)) {
+        data.categories.forEach(category => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'sponsor-category';
+            
+            const categoryTitle = document.createElement('h3');
+            categoryTitle.innerHTML = `${category.icon} ${category.name}`;
+            categoryDiv.appendChild(categoryTitle);
+            
+            const sponsorsList = document.createElement('div');
+            sponsorsList.className = 'sponsors-list';
+            
+            category.sponsors.forEach((sponsor, index) => {
+                const sponsorDiv = document.createElement('div');
+                sponsorDiv.className = 'sponsor-item';
+                sponsorDiv.innerHTML = `
+                    <h4>${category.icon} ${sponsor.name}</h4>
+                    <p>📍 ${sponsor.address}</p>
+                    <p>📞 ${sponsor.phone}</p>
+                `;
+                sponsorsList.appendChild(sponsorDiv);
+            });
+            
+            categoryDiv.appendChild(sponsorsList);
+            section.appendChild(categoryDiv);
+        });
     }
 }
 }
