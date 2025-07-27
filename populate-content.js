@@ -24,6 +24,7 @@ class ContentManager {
         this.populateListSection('programacao', window.eventData.programacao);
         this.populateSectionWithAchievements('sobre-jantar', window.eventData.sobreJantar, 'preserve-breaks');
         this.populateListSection('integrantes', window.eventData.integrantes);
+        this.populateSectionWithAchievements('Apoiadores', window.eventData.Apoiadores, 'preserve-breaks');
     }
 
     populateMenuSection(sectionId, data) {
@@ -132,8 +133,10 @@ class ContentManager {
         content.textContent = data.content;
         content.classList.add(cssClass);
     }
+    
     const existingList = section.querySelector('ul');
     if (existingList) existingList.remove();
+    
     if (data.achievements && Array.isArray(data.achievements)) {
         const achievementsList = document.createElement('ul');
         achievementsList.className = 'achievements-list';
@@ -141,6 +144,7 @@ class ContentManager {
         data.achievements.forEach(achievement => {
             const li = document.createElement('li');
             li.textContent = achievement;
+            li.classList.add(cssClass); 
             achievementsList.appendChild(li);
         });
         

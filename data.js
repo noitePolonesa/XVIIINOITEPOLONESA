@@ -35,9 +35,19 @@ const eventData = {
             }
         ]
     },
+    Apoiadores: {
+        title: "Apoiadores",
+        content: "O trabalho da Associação Cultural Polonesa de Itaiópolis só é possível graças ao apoio de instituições que compartilham do compromisso com a preservação e promoção da cultura polonesa em nossa cidade.\n\n",
+        achievements: [
+            "Prefeitura Municipal de Itaiópolis: \n\nA Prefeitura de Itaiópolis é uma parceira fundamental em nossas atividades. Por meio de repasses financeiros, contribui diretamente para a aquisição de trajes típicos utilizados pelo grupo folclórico e para a manutenção das aulas de língua polonesa, beneficiando crianças, jovens e adultos que desejam aprender o idioma e manter vivas as tradições de seus antepassados.\n\n",
+            "Consulado da República da Polônia em Curitiba: \n\nO Consulado da Polônia também tem sido um grande incentivador da cultura em nossa região. Sua colaboração viabiliza duas ações de grande impacto:\n1. Apoio à realização de eventos culturais que promovem a cultura polonesa.\n2. Contribuição para a preservação do patrimônio cultural polonês em Itaiópolis. \n\n - A Colônia de Férias Górale, realizada durante o recesso escolar, que atende cerca de 50 crianças com atividades culturais, recreativas e educativas, todas voltadas à cultura polonesa; \n\n-O apoio à abertura da Casa Polaski ao público, permitindo a realização de eventos e visitas culturais, além de abrigar um lojinha de artesanto e produtos locais.\n\n",
+            "ORPEG (Ośrodek Rozwoju Polskiej Edukacji za Granicą) \n\nA ORPEG, instituição ligada ao governo da Polônia, desempenha um papel essencial no fortalecimento do ensino da língua polonesa em Itaiópolis. Por meio de sua iniciativa, contamos com a presença de um professor nativo, que ministra aulas de polonês à comunidade local, garantindo uma formação linguística de qualidade e ainda mais conectada às raízes da cultura original.\n\n"
+        ]
+    },
     cidade: {
         title: "Itaiópolis... Capital Catarinense da Cultura Polonesa",
-        content: "Itaiópolis é reconhecida como a Capital Catarinense da Cultura Polonesa devido à forte presença de descendentes de imigrantes poloneses e à preservação ativa de suas tradições. O município destaca-se pela rica herança cultural trazida pelos primeiros colonizadores, que, através de danças típicas, festas tradicionais, gastronomia, música e costumes, mantém viva a memória polonesa de geração em geração. \n\nEssa herança cultural é celebrada e fortalecida a cada ano com  passagem das datas de 2 e 3 de maio, datas que se comemoram o dia da Bandeira Polonesa, dia da Constituição Polonesa, Dia da Comunidade Polonesa no Exterior, Dia da Cultura Polonesa em Santa Catarina e Dia da Comunidade Polonesa em Itaiópolis, sendo uma homenagem direta às tradições e contribuições que formaram a identidade cultural do município, reforçando ainda mais o orgulho e a preservação desse legado."
+        content: "Itaiópolis é reconhecida como a Capital Catarinense da Cultura Polonesa devido à forte presença de descendentes de imigrantes poloneses e à preservação ativa de suas tradições. O município destaca-se pela rica herança cultural trazida pelos primeiros colonizadores, que, através de danças típicas, festas tradicionais, gastronomia, música e costumes, mantém viva a memória polonesa de geração em geração. \n\nEssa herança cultural é celebrada e fortalecida a cada ano com  passagem das datas de 2 e 3 de maio, datas que se comemoram o dia da Bandeira Polonesa, dia da Constituição Polonesa, Dia da Comunidade Polonesa no Exterior, Dia da Cultura Polonesa em Santa Catarina e Dia da Comunidade Polonesa em Itaiópolis, sendo uma homenagem direta às tradições e contribuições que formaram a identidade cultural do município, reforçando ainda mais o orgulho e a preservação desse legado.",
+        
     },
     grupo: {
         title: "Grupo Folclórico Więzy Polskie",
@@ -88,7 +98,7 @@ const eventData = {
          "Jantar com comidas tradicionais",
          "Baile com músicas típicas",
          "Café colonial na madrugada.",
-         "Lojinha com artesanato e produtos locais.",
+         "Exposição e venda de artesanato e produtos locais.",
          "O evento é realizado com o envolvimento de voluntários da comunidade e atrai moradores e turistas em busca de uma experiência cultural autêntica, marcada pela gastronomia, música, dança e hospitalidade."
        ]
     },
