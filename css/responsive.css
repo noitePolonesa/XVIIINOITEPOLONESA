@@ -1,4 +1,3 @@
-/* Responsividade */
 @media (min-width: 768px) {
     .header-content {
         flex-direction: row;
@@ -24,7 +23,6 @@
         font-size: 1.3rem;
     }
     
-    /* Sponsors */
     .sponsors-logo {
         width: 700px;
     }
@@ -52,14 +50,12 @@
         gap: 3rem;
     }
     
-    /* Sponsors */
     .sponsors-logo {
         width: 750px;
     }
 }
 
 @media (max-width: 768px) {
-    /* Header */
     .header-logo {
         max-width: 150px;
         max-height: 150px;
@@ -73,7 +69,6 @@
         font-size: 1rem;
     }
     
-    /* Sponsors */
     .sponsors-container {
         padding: 1.5rem;
         margin-bottom: 2rem;
@@ -111,13 +106,11 @@
         margin-bottom: 1.5rem;
     }
     
-    /* Cards Base */
     .card-base {
         padding: 1.5rem;
         margin-bottom: 1rem;
     }
     
-    /* Accordion */
     .accordion-section.collapsed {
         padding: 1rem 1.5rem;
     }
@@ -126,7 +119,6 @@
         font-size: 1.3rem;
     }
     
-    /* Instagram */
     .instagram-container {
         padding: 1.5rem;
         margin-bottom: 2rem;
@@ -162,7 +154,6 @@
         margin-bottom: 0.5rem;
     }
     
-    /* Review */
     .review-header {
         flex-direction: column;
         text-align: center;
@@ -201,9 +192,8 @@
         font-size: 1rem;
     }
     
-    /* Carousel */
     .carousel {
-        height: 350px;
+        height: 450px;
     }
     
     .carousel-indicators {
@@ -216,7 +206,6 @@
         height: 12px;
     }
     
-    /* Drink Menu */
     .drink-menu {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -257,8 +246,6 @@
     .header-content {
         gap: 1rem;
     }
-    
-    /* Sponsors */
     .sponsors-logo {
         width: 450px;
     }
@@ -284,7 +271,7 @@
     }
     
     .carousel {
-        height: 280px;
+        height: 230px;
     }
     
     .carousel-container {
@@ -317,7 +304,6 @@
     }
 }
 
-/* Preferências de acessibilidade */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;

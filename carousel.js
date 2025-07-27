@@ -3,7 +3,7 @@ class CarouselManager {
         this.currentIndex = 0;
         this.images = [
             'image/carousel/1.jpg',
-            'image/carousel/2.png',
+            'image/carousel/2.jpg',
             'image/carousel/3.jpg',
             'image/carousel/4.jpg',
             'image/carousel/5.jpg',
@@ -19,6 +19,7 @@ class CarouselManager {
             'image/carousel/15.jpg',
         ];
         this.autoSlideInterval = null;
+        this.modalCurrentIndex = 0;
         this.init();
     }
 
@@ -35,6 +36,7 @@ class CarouselManager {
         this.createIndicators();
         this.createCounter();
         this.setupEventListeners();
+        this.createModal();
         this.startAutoSlide();
     }
 
@@ -50,6 +52,11 @@ class CarouselManager {
             img.src = imageSrc;
             img.alt = `Imagem ${index + 1} do carrossel`;
             img.className = 'carousel-image';
+            img.style.cursor = 'pointer';
+            
+            img.addEventListener('click', () => {
+                this.openModal(index);
+            });
             
             img.onerror = () => {
                 console.warn(`Erro ao carregar imagem: ${imageSrc}`);
@@ -62,6 +69,159 @@ class CarouselManager {
         });
     }
 
+    createModal() {
+        const existingModal = document.getElementById('carousel-modal');
+        if (existingModal) existingModal.remove();
+
+        const modal = document.createElement('div');
+        modal.id = 'carousel-modal';
+        modal.className = 'carousel-modal';
+        modal.innerHTML = `
+            <div class="modal-overlay">
+                <div class="modal-content">
+                    <button class="modal-close" aria-label="Fechar">×</button>
+                    <button class="modal-prev" aria-label="Imagem anterior">‹</button>
+                    <div class="modal-image-container">
+                        <img src="" alt="" class="modal-image">
+                    </div>
+                    <button class="modal-next" aria-label="Próxima imagem">›</button>
+                    <div class="modal-counter">1 / ${this.images.length}</div>
+                    <div class="modal-indicators"></div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+        this.setupModalEvents();
+    }
+
+    setupModalEvents() {
+        const modal = document.getElementById('carousel-modal');
+        const overlay = modal.querySelector('.modal-overlay');
+        const closeBtn = modal.querySelector('.modal-close');
+        const prevBtn = modal.querySelector('.modal-prev');
+        const nextBtn = modal.querySelector('.modal-next');
+
+        closeBtn.addEventListener('click', () => this.closeModal());
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) this.closeModal();
+        });
+
+        prevBtn.addEventListener('click', () => this.modalPrevImage());
+        nextBtn.addEventListener('click', () => this.modalNextImage());
+
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    this.closeModal();
+                    break;
+                case 'ArrowLeft':
+                    this.modalPrevImage();
+                    break;
+                case 'ArrowRight':
+                    this.modalNextImage();
+                    break;
+            }
+        });
+        this.setupModalTouchEvents();
+    }
+
+    setupModalTouchEvents() {
+        const modal = document.getElementById('carousel-modal');
+        const imageContainer = modal.querySelector('.modal-image-container');
+        let startX = 0;
+        let endX = 0;
+
+        imageContainer.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        imageContainer.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const difference = startX - endX;
+
+            if (Math.abs(difference) > 50) {
+                if (difference > 0) {
+                    this.modalNextImage();
+                } else {
+                    this.modalPrevImage();
+                }
+            }
+        });
+    }
+
+    openModal(index) {
+        this.modalCurrentIndex = index;
+        const modal = document.getElementById('carousel-modal');
+        const img = modal.querySelector('.modal-image');
+        
+        this.stopAutoSlide();
+        
+        img.src = this.images[index];
+        img.alt = `Imagem ${index + 1} do carrossel`;
+        this.updateModalCounter();
+        this.createModalIndicators();
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeModal() {
+        const modal = document.getElementById('carousel-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        setTimeout(() => this.startAutoSlide(), 1000);
+    }
+
+    modalNextImage() {
+        this.modalCurrentIndex = (this.modalCurrentIndex + 1) % this.images.length;
+        this.updateModalImage();
+    }
+
+    modalPrevImage() {
+        this.modalCurrentIndex = (this.modalCurrentIndex - 1 + this.images.length) % this.images.length;
+        this.updateModalImage();
+    }
+
+    updateModalImage() {
+        const modal = document.getElementById('carousel-modal');
+        const img = modal.querySelector('.modal-image');
+        const indicators = modal.querySelectorAll('.modal-indicator');
+        
+        img.src = this.images[this.modalCurrentIndex];
+        img.alt = `Imagem ${this.modalCurrentIndex + 1} do carrossel`;
+        
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === this.modalCurrentIndex);
+        });
+        
+        this.updateModalCounter();
+    }
+
+    updateModalCounter() {
+        const modal = document.getElementById('carousel-modal');
+        const counter = modal.querySelector('.modal-counter');
+        counter.textContent = `${this.modalCurrentIndex + 1} / ${this.images.length}`;
+    }
+
+    createModalIndicators() {
+        const modal = document.getElementById('carousel-modal');
+        const container = modal.querySelector('.modal-indicators');
+        container.innerHTML = '';
+        
+        this.images.forEach((_, index) => {
+            const indicator = document.createElement('button');
+            indicator.className = `modal-indicator ${index === this.modalCurrentIndex ? 'active' : ''}`;
+            indicator.addEventListener('click', () => {
+                this.modalCurrentIndex = index;
+                this.updateModalImage();
+            });
+            container.appendChild(indicator);
+        });
+    }
     createIndicators() {
         const indicatorsContainer = document.querySelector('.carousel-indicators');
         if (!indicatorsContainer) return;
@@ -75,7 +235,7 @@ class CarouselManager {
             indicator.addEventListener('click', () => {
                 this.goToSlide(index);
                 this.stopAutoSlide();
-                setTimeout(() => this.startAutoSlide(), 3000); // Reinicia após 3s
+                setTimeout(() => this.startAutoSlide(), 3000);
             });
             
             indicatorsContainer.appendChild(indicator);
@@ -131,13 +291,6 @@ class CarouselManager {
             });
         }
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                this.previousSlide();
-            } else if (e.key === 'ArrowRight') {
-                this.nextSlide();
-            }
-        });
         this.setupTouchEvents();
     }
 
