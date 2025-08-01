@@ -67,7 +67,6 @@ main {
     color: #333;
 }
 
-/* Estilos gerais para patrocinadores */
 .sponsor-category {
     margin-bottom: 2rem;
 }
@@ -104,8 +103,6 @@ main {
     font-size: 0.9rem;
     color: #666;
 }
-
-/* Estilos específicos para patrocinador prata */
 .silver-sponsor h3 {
     color: #8B8680;
     border-bottom: 2px solid #C0C0C0;
@@ -124,7 +121,6 @@ main {
     color: #A0A0A0;
 }
 
-/* Links */
 .instagram-link {
     color: #E4405F;
     text-decoration: none;

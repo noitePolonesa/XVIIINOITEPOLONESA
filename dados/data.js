@@ -3,34 +3,29 @@ const eventData = {
         title: "Cardápio de Bebidas",
         categories: [
             {
-                name: "Cervejas",
+                name: "Bebidas Frias",
                 items: [
-                    { name: "Cerveja Brahma", price: "R$ 8,00" },
-                    { name: "Cerveja Heineken", price: "R$ 12,00" },
-                    { name: "Chopp Pilsen", price: "R$ 9,00" }
+                    { name: "Refrigerante Coca-Cola e Guaraná Lata 350ml", price: "R$ 7,00" },
+                    { name: "Cerveja Brahma e Skol Lata 350ml", price: "R$ 7,00" },
+                    { name: "Cerveja sem álcool Lata 350ml", price: "R$ 8,00" },
+                    { name: "Água Mineral com gás e sem gás (garrafa 500ml)", price: "R$ 4,00" }
                 ]
             },
             {
                 name: "Vinhos",
                 items: [
-                    { name: "Vinho Tinto", price: "R$ 25,00" },
-                    { name: "Vinho Branco", price: "R$ 22,00" }
+                    { name: "Quinta do Morgado – Suave - Nacional", price: "R$ 50,00" },
+                    { name: "Ventisquero Explorador – Cabernet Sauvignon – Chile", price: "R$ 70,00" },
+                    { name: "Signos – Malbec – Argentina", price: "R$ 85,00" },
+                    { name: "Errazuriz 1870 Reserva - Cabernet Sauvignon – Chile", price: "R$ 85,00" }
                 ]
             },
             {
-                name: "Destilados",
+                name: "Espumantes",
                 items: [
-                    { name: "Vodka Nacional", price: "R$ 10,00" },
-                    { name: "Whisky", price: "R$ 18,00" },
-                    { name: "Licor Polonês", price: "R$ 16,00" }
-                ]
-            },
-            {
-                name: "Sem Álcool",
-                items: [
-                    { name: "Refrigerante 350ml", price: "R$ 5,00" },
-                    { name: "Água Mineral", price: "R$ 3,00" },
-                    { name: "Suco Natural", price: "R$ 7,00" }
+                    { name: "Gazzaro - Brut – Serra Gaúcha", price: "R$ 90,00" },
+                    { name: "Gazzaro - Moscatel – Serra Gaúcha", price: "R$ 90,00" },
+                    { name: "Rolha", price: "R$ 70,00" }
                 ]
             }
         ]
