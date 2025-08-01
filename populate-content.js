@@ -82,16 +82,16 @@ class ContentManager {
     }
 
     populateSection(sectionId, data) {
-    const section = document.getElementById(sectionId);
-    if (!section || !data) return;
-    const title = section.querySelector('h2');
-    if (title) title.textContent = data.title;
-    const content = section.querySelector('p');
-    if (content && typeof data.content === 'string') {
-        content.textContent = data.content;
-        content.classList.add('preserve-breaks'); 
+        const section = document.getElementById(sectionId);
+        if (!section || !data) return;
+        const title = section.querySelector('h2');
+        if (title) title.textContent = data.title;
+        const content = section.querySelector('p');
+        if (content && typeof data.content === 'string') {
+            content.textContent = data.content;
+            content.classList.add('preserve-breaks'); 
+        }
     }
-}
 
     populateSectionWithClass(sectionId, data, cssClass) {
         const section = document.getElementById(sectionId);
@@ -103,7 +103,6 @@ class ContentManager {
             content.textContent = data.content;
             content.classList.add(cssClass);
         }
-        
     }
 
     populateListSection(sectionId, data) {
@@ -124,93 +123,143 @@ class ContentManager {
     }
 
     populateSectionWithAchievements(sectionId, data, cssClass) {
-    const section = document.getElementById(sectionId);
-    if (!section || !data) return;
-    
-    const title = section.querySelector('h2');
-    if (title) title.textContent = data.title;
-    
-    const content = section.querySelector('p');
-    if (content && typeof data.content === 'string') {
-        content.textContent = data.content;
-        content.classList.add(cssClass);
-    }
+        const section = document.getElementById(sectionId);
+        if (!section || !data) return;
+        
+        const title = section.querySelector('h2');
+        if (title) title.textContent = data.title;
+        
+        const content = section.querySelector('p');
+        if (content && typeof data.content === 'string') {
+            content.textContent = data.content;
+            content.classList.add(cssClass);
+        }
 
-    const existingList = section.querySelector('ul');
-    if (existingList) existingList.remove();
-    
-    const existingImages = section.querySelector('.supporter-images');
-    if (existingImages) existingImages.remove();
-    
-    if (data.achievements && Array.isArray(data.achievements)) {
-        const achievementsList = document.createElement('ul');
-        achievementsList.className = 'achievements-list';
+        const existingList = section.querySelector('ul');
+        if (existingList) existingList.remove();
         
-        data.achievements.forEach(achievement => {
-            const li = document.createElement('li');
-            li.textContent = achievement;
-            li.classList.add(cssClass); 
-            achievementsList.appendChild(li);
-        });
+        const existingImages = section.querySelector('.supporter-images');
+        if (existingImages) existingImages.remove();
         
-        section.appendChild(achievementsList);
-    }
-    
-    if (data.supporterImages && Array.isArray(data.supporterImages)) {
-        const imagesContainer = document.createElement('div');
-        imagesContainer.className = 'supporter-images';
-        
-        data.supporterImages.forEach(image => {
-            const imgElement = document.createElement('img');
-            imgElement.src = image.src;
-            imgElement.alt = image.alt;
-            imgElement.className = 'supporter-image';
-            imagesContainer.appendChild(imgElement);
-        });
-        
-        section.appendChild(imagesContainer);
-    }
-}
-
-populateSponsorsSection(sectionId, data) {
-    const section = document.getElementById(sectionId);
-    if (!section || !data) return;
-    
-    const title = section.querySelector('h2');
-    if (title) title.textContent = data.title;
-    
-    // Remove conteúdo existente
-    const existingContent = section.querySelectorAll(':not(h2)');
-    existingContent.forEach(el => el.remove());
-    
-    if (data.categories && Array.isArray(data.categories)) {
-        data.categories.forEach(category => {
-            const categoryDiv = document.createElement('div');
-            categoryDiv.className = 'sponsor-category';
+        if (data.achievements && Array.isArray(data.achievements)) {
+            const achievementsList = document.createElement('ul');
+            achievementsList.className = 'achievements-list';
             
-            const categoryTitle = document.createElement('h3');
-            categoryTitle.innerHTML = `${category.icon} ${category.name}`;
-            categoryDiv.appendChild(categoryTitle);
-            
-            const sponsorsList = document.createElement('div');
-            sponsorsList.className = 'sponsors-list';
-            
-            category.sponsors.forEach((sponsor, index) => {
-                const sponsorDiv = document.createElement('div');
-                sponsorDiv.className = 'sponsor-item';
-                sponsorDiv.innerHTML = `
-                    <h4>${category.icon} ${sponsor.name}</h4>
-                    <p>📍 ${sponsor.address}</p>
-                    <p>📞 ${sponsor.phone}</p>
-                `;
-                sponsorsList.appendChild(sponsorDiv);
+            data.achievements.forEach(achievement => {
+                const li = document.createElement('li');
+                li.textContent = achievement;
+                li.classList.add(cssClass); 
+                achievementsList.appendChild(li);
             });
             
-            categoryDiv.appendChild(sponsorsList);
-            section.appendChild(categoryDiv);
-        });
+            section.appendChild(achievementsList);
+        }
+        
+        if (data.supporterImages && Array.isArray(data.supporterImages)) {
+            const imagesContainer = document.createElement('div');
+            imagesContainer.className = 'supporter-images';
+            
+            data.supporterImages.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image.src;
+                imgElement.alt = image.alt;
+                imgElement.className = 'supporter-image';
+                imagesContainer.appendChild(imgElement);
+            });
+            
+            section.appendChild(imagesContainer);
+        }
+    }
+
+    populateSponsorsSection(sectionId, data) {
+        const section = document.getElementById(sectionId);
+        if (!section || !data) return;
+        
+        const title = section.querySelector('h2');
+        if (title) title.textContent = data.title;
+        
+        // Remove conteúdo existente
+        const existingContent = section.querySelectorAll(':not(h2)');
+        existingContent.forEach(el => el.remove());
+        
+        if (data.categories && Array.isArray(data.categories)) {
+            data.categories.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'sponsor-category';
+                
+                // Adiciona classe especial para patrocinador prata
+                if (category.name.toLowerCase().includes('prata')) {
+                    categoryDiv.classList.add('silver-sponsor');
+                }
+                
+                const categoryTitle = document.createElement('h3');
+                categoryTitle.innerHTML = `${category.icon} ${category.name}`;
+                categoryDiv.appendChild(categoryTitle);
+                
+                const sponsorsList = document.createElement('div');
+                sponsorsList.className = 'sponsors-list';
+                
+                category.sponsors.forEach((sponsor, index) => {
+                    const sponsorDiv = document.createElement('div');
+                    sponsorDiv.className = 'sponsor-item';
+                    
+                    const sponsorName = document.createElement('h4');
+                    sponsorName.textContent = sponsor.name;
+                    sponsorDiv.appendChild(sponsorName);
+                    
+                    const sponsorInfo = document.createElement('div');
+                    sponsorInfo.className = 'sponsor-info';
+                    
+                    if (sponsor.address) {
+                        const address = document.createElement('p');
+                        address.textContent = `Endereço: ${sponsor.address}`;
+                        sponsorInfo.appendChild(address);
+                    }
+                    
+                    if (sponsor.phone) {
+                        const phone = document.createElement('p');
+                        phone.textContent = `Telefone: ${sponsor.phone}`;
+                        sponsorInfo.appendChild(phone);
+                    }
+                    
+                    if (sponsor.instagram) {
+                        const instagramP = document.createElement('p');
+                        const instagramLink = document.createElement('a');
+                        instagramLink.href = sponsor.instagram;
+                        instagramLink.target = '_blank';
+                        instagramLink.className = 'instagram-link';
+                        instagramLink.textContent = `@${sponsor.name.toLowerCase().replace(/\s+/g, '')}`;
+                        instagramLink.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                        });
+                        instagramP.appendChild(instagramLink);
+                        sponsorInfo.appendChild(instagramP);
+                    }
+                    
+                    if (sponsor.website) {
+                        const websiteP = document.createElement('p');
+                        const websiteLink = document.createElement('a');
+                        websiteLink.href = sponsor.website;
+                        websiteLink.target = '_blank';
+                        websiteLink.className = 'website-link';
+                        websiteLink.textContent = 'Site oficial';
+                        websiteLink.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                        });
+                        websiteP.appendChild(websiteLink);
+                        sponsorInfo.appendChild(websiteP);
+                    }
+                    
+                    sponsorDiv.appendChild(sponsorInfo);
+                    sponsorsList.appendChild(sponsorDiv);
+                });
+                
+                categoryDiv.appendChild(sponsorsList);
+                section.appendChild(categoryDiv);
+            });
+        }
     }
 }
-}
 
+// Inicializa a classe
 new ContentManager();

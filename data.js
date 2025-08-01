@@ -179,38 +179,45 @@ const eventData = {
                 {
                     name: "Bom Preço Utilidades Domésticas",
                     address: "Av. Alexandre Ricardo Worell, 112 – Centro",
-                    phone: "(47) 3652-2561"
+                    phone: "(47) 3652-2561",
+                    instagram: "https://www.instagram.com/bpitaiopolis?igsh=MThieGZnMzQ0NmUyNw=="
                     
                 },
                 {
                     name: "Casarão – Museu da Memória Regional",
                     address: "Rua Alfredo Schneider, 1490 – Alto Paraguaçu",
-                    phone: "(47) 3305-3142"
+                    phone: "(47) 3305-3142",
+                    instagram: "https://www.instagram.com/casarao.museudamemoriaregional?igsh=c2czbW5lcnJ5M3Fz"
                 },
                 {
                     name: "Contabilidade Semmer",
                     address: "Av. Getúlio Vargas, 386 – Centro",
-                    phone: "(47) 3652-2220"
+                    phone: "(47) 3652-2220",
+                    instagram: "https://www.semmer.com.br"
                 },
                 {
                     name: "Demais FM Planalto Norte",
                     address: "Av. Alexandre Ricardo Worell, 89",
-                    phone: "(47) 99172-7403"
+                    phone: "(47) 99172-7403",
+                    instagram: "https://www.instagram.com/demaisfmplanaltonorte?igsh=MXNidWNoa2pyNTdraQ=="
                 },
                 {
                     name: "Odonto Excellence Itaiópolis",
                     address: "Cel. Antônio Corrêia, 241 – Centro",
-                    phone: "(47) 3652-2237"
+                    phone: "(47) 3652-2237",
+                    instagram: "https://www.instagram.com/odontoexcellenceitaiopolis?igsh=MWdmYW95Z3E5NmwxZg=="
                 },
                 {
                     name: "Pierogarnia Lis",
                     address: "Rua Alfredo Schneider, 1536 – Alto Paraguaçu",
-                    phone: "(47) 99187-3327"
+                    phone: "(47) 99187-3327",
+                    instagram: "https://www.instagram.com/pierogarnia_lis?igsh=OGhlOHRnMXM0MTN2"
                 },
                 {
                     name: "Rede Ita",
                     address: "Av. Alexandre Ricardo Worell, 215 – Centro",
-                    phone: "(47) 99904-3318"
+                    phone: "(47) 99904-3318",
+                    instagram: "https://www.instagram.com/postohj?igsh=NWx4YzNsYTd1NWNv"
                 }
             ]
         },
@@ -221,17 +228,20 @@ const eventData = {
                 {
                     name: "Poduszka Café e Bistro",
                     address: "Rua Manoel Pedro da Silveira, 1743 – Centro",
-                    phone: "(47) 99222-8976"
+                    phone: "(47) 99222-8976",
+                    instagram: "https://www.instagram.com/poduszka_cafebistro?igsh=aXptZDY4ZmNidWo="
                 },
                 {
                     name: "Sicredi Itaiópolis",
                     address: "Av. Pres. Tancredo Neves, 16 – Centro",
-                    phone: "(47) 3627-4641"
+                    phone: "(47) 3627-4641",
+                    instagram: "https://www.instagram.com/sicredi?igsh=MTUwdno0dmF5N3duZQ=="
                 },
                 {
                     name: "Soetur Turismo",
                     address: "Rua Henrique Koening – Bom Jesus",
-                    phone: "(47) 3652-2184"
+                    phone: "(47) 3652-2184",
+                    instagram: "https://www.instagram.com/soetur_turismo?igsh=a2RvZm94eGJoazNn"
                 }
             ]
         }

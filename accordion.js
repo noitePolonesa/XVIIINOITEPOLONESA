@@ -70,18 +70,24 @@ class AccordionManager {
 }
 
     setupEventListeners(section, content) {
-        section.addEventListener('click', (event) => {
+    section.addEventListener('click', (event) => { 
+        if (event.target.tagName === 'A' || event.target.closest('a')) {
+            return; 
+        }
+        
+        event.preventDefault();
+        this.handleToggle(section, content);s
+    });        
+    
+    section.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
             this.handleToggle(section, content);
-        });        
-        section.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                this.handleToggle(section, content);
-            }
-        });
-        section.style.cursor = 'pointer';
-    }
+        }
+    });
+    
+    section.style.cursor = 'pointer';
+}
 
     handleToggle(section, content) {
         const isExpanded = section.getAttribute('aria-expanded') === 'true';
