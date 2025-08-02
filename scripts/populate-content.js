@@ -28,6 +28,7 @@ class ContentManager {
         this.populateSponsorsSection('infoPatrocinadores', window.eventData.infoPatrocinadores);
         this.populateSectionWithClass('integrantesAdultos', window.eventData.integrantesAdultos, 'preserve-breaks');
         this.populateArtesanato('exposicaoArtesanato', eventData.exposicaoArtesanato);
+        this.populateSectionWithClass('chorPolskieSokoly', window.eventData.chorPolskieSokoly, 'preserve-breaks');
     }
 
     populateMenuSection(sectionId, data) {

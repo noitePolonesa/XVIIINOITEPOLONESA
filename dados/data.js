@@ -195,6 +195,11 @@ exposicaoArtesanato: {
     ]
 },
 
+    chorPolskieSokoly: {
+        title: "CHÓR POLSKIE SOKOŁY",
+        content: "O \"CHÓR POLSKIE SOKOŁY\", em português \"Coral Falcões Poloneses\", é constituído por alunos das aulas de língua polonesa de Papanduva SC que adoram cantar. Foi formado em 02.10.2021, na ocasião da primeira visita de uma delegação do Governo Polonês à cidade. Seu nome vem da canção folclórica \"Hej, Sokoły\" (Hei, falcões) que foi a canção apresentada durante a visita e também a primeira cantada pelo coral.\n\nO grupo tem como objetivo, além do gosto pelo cantar, aprimorar seus conhecimentos e difundir a língua e a cultura polonesa na região."
+    },
+
     infoPatrocinadores: {
     title: "Saiba Mais Sobre os Nossos Patrocinadores",
     categories: [
