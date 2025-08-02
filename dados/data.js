@@ -112,43 +112,50 @@ const eventData = {
        ]
     },
 
-    // integrantesAdultos: {
-    // title: "Dançarinos Grupo Adulto",
-    // content: [
-        
-    // ]
-    // },
+    integrantesAdultos: {
+    title: "Voluntários do evento",
+    content: [
+        "Decoração: Gisele Maria Rodycz e Clarisa Ap. Freza",
+        "Coreografias: Catarina Wielewski e Diovane Jr. Pickcius Strobel, inspirado nos grupos Mazowse e Politécnica de Varsóvia.",
+        "Apoio logístico: Frutas Rogalski, Daniel Wielewski, Amanda Semmer Wielewski, Sirlene Weinert Rodycz, Luiz Eduardo Niedzieski, Silvana Castanheiro, Adriano Lis, Auto Peças Bauer.",
+        "Patrocínios: Dirceu Labas e Aldo Lis",
+        "Elaboração site: Jean Fabio Gruber",
+        "Cerimonial quebra do gelo e apoio fantasia Babucha: Adriano Andrzejewski e família.",
+        "Cerimonialista: Luis Wojciechowski.",
+        "Brinde da vodka: Gustavo Bojarski"
+    ]
+},
 
     integrantes: {
     title: "Dançarinos Grupo",
     content: [
-        "Aline Lis Bauer",
-         "Alex Lis", 
-         "Ana Flavia Rogalski", 
-         "Carlos Daniel Jacintho de Souza", 
-         "Catarina Wielewski", "Clara Lis Bauer", 
-         "Clarisa Aparecida Freza", "Dirceu Labas", 
-         "Diovane Junior Pickcius Strobel", 
-         "Gisele Maria Rodycz", 
-         "João Ricardo Alves dos Santos", 
-         "Rodrigo Mikley Bilobran", 
-         "Talita Rogalewski",
+        "Alex Lis",
         "Alice Duffeck Rodycz",
+        "Aline Lis Bauer",
         "Amanda Gelbcke",
         "Ana Carolina Adriano",
+        "Ana Flavia Rogalski",
         "Ana Julia Mageroski",
         "Anna Julia Ziemba",
         "Antonio Paulo Lis Bauer",
         "Bernardo Woiciechovski",
+        "Carlos Daniel Jacintho de Souza",
+        "Catarina Wielewski",
+        "Clara Lis Bauer",
+        "Clarisa Aparecida Freza",
         "Diogo Andrzejewski",
+        "Diovane Junior Pickcius Strobel",
+        "Dirceu Labas",
         "Eduardo Davet De Jesus",
         "Erika Sperka Novacki",
         "Francisco Emanuel Penkal Kovalski",
+        "Gisele Maria Rodycz",
         "Heitor Luiz De Jesus",
         "Helena Mengarda Jakubiak",
         "Helena Woyszczak",
         "Henrique Pamfil",
         "Isabelly Rogalski",
+        "João Ricardo Alves dos Santos",
         "Julia Duffeck Rodycz",
         "Julia Levandovski",
         "Júlia Gaio Wielewski",
@@ -160,7 +167,39 @@ const eventData = {
         "Mirella Karoline Rogalski",
         "Nicolas Rogalevski",
         "Paloma Szostak",
-        "Pietro José Ahrendt"
+        "Pietro José Ahrendt",
+        "Rodrigo Mikley Bilobran",
+        "Talita Rogalewski"
+    ]
+},
+
+exposicaoArtesanato: {
+    title: "Exposição e venda de artesanato e produtos locais",
+    gallery: [
+        {
+            src: "image/artesanato/1.jpg",
+            alt: "Artesanato 1"
+        },
+        {
+            src: "image/artesanato/2.jpg",
+            alt: "Artesanato 2"
+        },
+        {
+            src: "image/artesanato/3.jpg",
+            alt: "Artesanato 3"
+        },
+        {
+            src: "image/artesanato/4.jpg",
+            alt: "Artesanato 4"
+        },
+        {
+            src: "image/artesanato/5.jpg",
+            alt: "Artesanato 5"
+        },
+        {
+            src: "image/artesanato/6.png",
+            alt: "Artesanato 6"
+        }
     ]
 },
 
