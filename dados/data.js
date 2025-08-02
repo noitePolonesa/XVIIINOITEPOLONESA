@@ -112,19 +112,11 @@ const eventData = {
        ]
     },
 
-    integrantesAdultos: {
-    title: "Voluntários do evento",
-    content: [
-        "Decoração: Gisele Maria Rodycz e Clarisa Ap. Freza",
-        "Coreografias: Catarina Wielewski e Diovane Jr. Pickcius Strobel, inspirado nos grupos Mazowse e Politécnica de Varsóvia.",
-        "Apoio logístico: Frutas Rogalski, Daniel Wielewski, Amanda Semmer Wielewski, Sirlene Weinert Rodycz, Luiz Eduardo Niedzieski, Silvana Castanheiro, Adriano Lis, Auto Peças Bauer.",
-        "Patrocínios: Dirceu Labas e Aldo Lis",
-        "Elaboração site: Jean Fabio Gruber",
-        "Cerimonial quebra do gelo e apoio fantasia Babucha: Adriano Andrzejewski e família.",
-        "Cerimonialista: Luis Wojciechowski.",
-        "Brinde da vodka: Gustavo Bojarski"
-    ]
-},
+    integrantesAdultos:  {
+        title: "Agradecimentos",
+        content: "Agradecemos de coração a todos os voluntários que tornaram possível a realização da 18ª Noite Polonesa.\n\nObrigado a cada pessoa que dedicou seu tempo e energia para preservar e celebrar nossa cultura polonesa. Desde a preparação dos pratos tradicionais, decoração do evento, ensaios das danças folclóricas, até o atendimento caloroso aos nossos convidados.\n\nEste evento é resultado do trabalho coletivo e do amor pela nossa herança cultural polonesa. Cada voluntário contribuiu para fazer desta noite uma experiência única e especial.\n\nDziękujemy bardzo! Muito obrigado!",
+        
+    },
 
     integrantes: {
     title: "Dançarinos Grupo",

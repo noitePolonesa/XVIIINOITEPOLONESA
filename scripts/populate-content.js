@@ -26,7 +26,8 @@ class ContentManager {
         this.populateListSection('integrantes', window.eventData.integrantes);
         this.populateSectionWithAchievements('Apoiadores', window.eventData.Apoiadores, 'preserve-breaks');
         this.populateSponsorsSection('infoPatrocinadores', window.eventData.infoPatrocinadores);
-        this.populateListSection('integrantesAdultos', window.eventData.integrantesAdultos);
+        this.populateSectionWithClass('integrantesAdultos', window.eventData.integrantesAdultos, 'preserve-breaks');
+        this.populateArtesanato('exposicaoArtesanato', eventData.exposicaoArtesanato);
     }
 
     populateMenuSection(sectionId, data) {
@@ -259,6 +260,37 @@ class ContentManager {
             });
         }
     }
+
+    
+    populateArtesanato(sectionId, data) {
+        const section = document.getElementById(sectionId);
+        if (!section || !data) return;
+        
+        const title = section.querySelector('h2');
+        if (title) title.textContent = data.title;
+        
+        const gallery = section.querySelector('.artesanato-gallery');
+        if (gallery && data.gallery) {
+            gallery.innerHTML = '';
+            
+            data.gallery.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.alt;
+                img.className = 'artesanato-image';
+                img.loading = 'lazy';
+                
+                img.onerror = function() {
+                    this.style.display = 'none';
+                    console.warn(`Imagem não encontrada: ${this.src}`);
+                };
+                
+                gallery.appendChild(img);
+            });
+        }
+    }
+
+    
 }
 
 // Inicializa a classe
